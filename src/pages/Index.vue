@@ -45,9 +45,6 @@ export default {
             .then(res => {
                 console.log(res.data);
                 this.news = res.data.contents
-                let hoge = res.data.contents[0].news_date.split('-')[2].toString()
-                let huga = hoge.indexOf("T")
-                console.log(hoge.substring(0, huga), 'news_date')
             })
             .catch(err => {
                 console.log(err);
