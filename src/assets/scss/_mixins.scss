@@ -1,0 +1,79 @@
+//Config
+$mq-breakPoints: (
+	'tablet': 768px,
+	'pc': 1025px,
+);
+@mixin mq($breakPoint: tablet) {
+	@media screen and (min-width: #{map-get($mq-breakPoints, $breakPoint)}) {
+		@content;
+	}
+}
+@mixin spLandScapeOnly() {
+  @media only screen and (orientation:landscape) and (max-width: 812px) {
+    @content;
+  }
+}
+@mixin mAuto($right: auto, $left: auto) {
+	margin-right: $right;
+	margin-left: $left;
+}
+@mixin centeRingXY($state: absolute) {
+	position: $state;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+}
+@mixin centeRingX($state: absolute, $topValue: 0) {
+	position: $state;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	top: $topValue;
+	left: 50%;
+}
+@mixin centerRingY($state: absolute, $leftValue: 0) {
+	position: $state;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	top: 50%;
+	left: $leftValue;
+}
+@mixin ptlz($state: absolute, $y: 0, $x: 0, $z: 0) {
+	position: $state;
+	top: $y;
+	left: $x;
+	z-index: $z;
+}
+@mixin timingFunc($time: 0.4s) {
+	-webkit-transition: $time ease-in-out;
+	transition: $time ease-in-out;
+}
+//Colors
+$Colors: (
+  'init': transparent,
+	'base': #f19149,
+	'info': #4bae4f,
+  'key1': #f19149,
+  'key2': #4bae4f,
+  'key3': #2095f2,
+  'key4': #ff4c4c,
+	'about': #f19149,
+	'service': #4bae4f,
+	'vision': #2095f2,
+  'privacy': #ff4c4c,
+  'contact': #4bae4f,
+  'thanks': #4bae4f
+);
+@mixin fontColor($value: base) {
+	color: #{map-get($Colors, $value)};
+}
+@mixin bgColor($value: main) {
+	background-color: #{map-get($Colors, $value)};
+}
+@mixin borderColor($value: main) {
+	border-color: #{map-get($Colors, $value)};
+}
+@function getColor($value: init) {
+  @return #{map-get($Colors, $value)};
+}
+//Base

@@ -1,0 +1,129 @@
+/*
+ * Naver v3.1.2 - 2015-04-04
+ * A jQuery plugin for responsive navigation. Part of the Formstone Library.
+ * http://formstone.it/naver/
+ *
+ * Copyright 2015 Ben Plum; MIT Licensed
+ */
+/*
+ * Naver v3.1.2 - 2015-04-04
+ * A jQuery plugin for responsive navigation. Part of the Formstone Library.
+ * http://formstone.it/naver/
+ *
+ * Copyright 2015 Ben Plum; MIT Licensed
+ */
+/*
+ * Naver v3.1.2 - 2014-11-25
+ * A jQuery plugin for responsive navigation. Part of the Formstone Library.
+ * http://formstone.it/naver/
+ *
+ * Copyright 2014 Ben Plum; MIT Licensed
+ */
+.naver {
+  margin: 0;
+}
+
+.naver,
+.naver *,
+.naver *:after,
+.naver *:before {
+  box-sizing: border-box;
+}
+
+// .naver.enabled.open .naver-handle:after {}
+
+.naver-handle {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  border: 1px #f19149 solid;
+  border-radius: 3px;
+  color: #f19149;
+  cursor: pointer;
+  display: none;
+  font-size: 16px;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.naver-handle:after {
+  height: 2px;
+  width: 15px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
+  background: #f19149;
+  box-shadow: 0 5px 0 #f19149, 0 -5px 0 #f19149;
+  content: '';
+  display: block;
+  margin: 0 auto;
+}
+
+.naver.open .naver-handle:after {
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #f19149;
+  content: "\00d7";
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  margin-top: -3px;
+}
+
+.naver-wrapper {
+  border: none;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.naver-container:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+.naver.enabled .naver-handle {
+  display: block;
+}
+
+.naver.enabled .naver-wrapper {
+  height: 0;
+  overflow: hidden;
+}
+
+.naver.enabled .naver-container {
+  background: rgba(0,0,0,0.7);
+  border-width: 0 1px 1px;
+  padding: 8% 0 0;
+}
+
+.naver.enabled.open {
+  height: 100%;
+}
+@media screen and (max-width:560px) {
+  .naver.enabled .naver-container {
+    padding: 16% 0 0;
+  }
+}

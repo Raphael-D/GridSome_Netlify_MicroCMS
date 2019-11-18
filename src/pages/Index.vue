@@ -18,6 +18,7 @@
 
     <ul>
       <li v-for="posts in news" :key="posts.id">
+        <h1>{{posts}}</h1>
         <span class="news-date">{{ convertDate(posts.news_date) }} </span>
         <span class="news-text">{{ posts.news_title }}</span>
       </li>
@@ -43,8 +44,9 @@ export default {
                 headers: {'X-API-KEY': '6ccedd0a-a90d-45f3-801f-1a10abf108f4'}
             })
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 this.news = res.data.contents
+
             })
             .catch(err => {
                 console.log(err);

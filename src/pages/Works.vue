@@ -15,13 +15,11 @@
       <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
       <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
     </p>
-    <p>hoge</p>
-    <div>{{ title }}</div>
-    <div v-html="greeting"></div>
-    <p>|||hero</p>
-    <div><img :src="hero.src" /></div>
-    <div>{{ about }}</div>
-    </Layout>
+
+    <ul class="blog-list">
+      {{ blog.permalink }}
+    </ul>
+  </Layout>
 </template>
 
 <script>
@@ -32,26 +30,23 @@ export default {
   },
   data() {
     return {
-      title: null,
-      greeting: null,
-      hero: {
-        src: null
-      },
-      about: null
+      blog: {
+          permalink: null
+      }
     }
   },
   methods: {
     fetchArticles() {
           axios
-            .get('https://codehack.microcms.io/api/v1/company', {
+            .get('https://codehack.microcms.io/api/v1/blog', {
                 headers: {'X-API-KEY': '6ccedd0a-a90d-45f3-801f-1a10abf108f4'}
             })
             .then(res => {
                 // console.log(res.data);
-                this.title = res.data.title,
-                this.greeting = res.data.greeting,
-                this.hero.src = res.data.hero.url,
-                this.about = res.data.about
+                // this.blog = res.data.contents
+                for(const content of res.data.contents) {
+                    this.blog = content;
+                }
 
             })
             .catch(err => {
@@ -69,5 +64,13 @@ export default {
 <style>
 .home-links a {
   margin-right: 1rem;
+}
+.blog-list {
+    padding: 2em 1em;
+    list-style: none;
+}
+.blog-list__item:first-of-type {
+    border-top: 1px solid #ccc;
+    padding: 1em 0;
 }
 </style>
