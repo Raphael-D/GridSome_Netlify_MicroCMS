@@ -15,7 +15,7 @@
       <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
       <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
     </p>
-
+    <h1 style="background-color: #00f; color: #fff; padding: .5em; text-align: center;">hogehogehoge</h1>
     <ul>
       <li v-for="posts in news" :key="posts.id">
         <h1>{{posts}}</h1>
