@@ -1,0 +1,369 @@
+@import 'mixins';
+/*================
+ Subpage common
+===============*/
+.page-img {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 40px;
+  background-image: radial-gradient(rgba(241,145,73,0.2) 20%, #FEF7E5 0), radial-gradient(rgba(241,145,73,0.2) 20%, #FEF7E5 0);
+  background-position: 0 0, 10px 10px;
+  background-size: 10px 10px;
+  @include mq() {
+    height: 300px;
+  }
+}
+
+.page-title {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY (-50%);
+  width: 100%;
+  max-width: 1080px;
+  font-size: 36px;
+  font-size: 3.6rem;
+}
+
+.page-bg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1080px;
+  line-height: 0;
+}
+
+.page-title span {
+  padding-left: 20px;
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+.page-title br {
+  display: none;
+}
+
+.heading {
+  margin-bottom: 20px;
+  padding-left: 10px;
+  font-size: 18px;
+  font-size: 1.8rem;
+  border-left: 8px getColor(base) solid;
+}
+/*==========================
+about.html
+==========================*/
+.subpage--about .heading,
+.subpage--about .page-title {
+  @include fontColor(about);
+}
+
+.company-wrap dl {
+  width: 100%;
+  margin-bottom: 40px;
+  overflow: hidden;
+  border-top: 1px #ccc solid;
+}
+
+.company-wrap dt {
+  width: 30%;
+  padding: 2% 0 2% 1%;
+  font-weight: bold;
+  @include mq() {
+    float: left;
+    clear: both;
+    font-weight: normal;
+    background-color: #f7f7f7;
+  }
+}
+
+.company-wrap dd {
+  width: 100%;
+  border-bottom: 1px #ccc solid;
+  @include mq() {
+    padding: 2% 0 2% 32%;
+  }
+}
+
+.map {
+  margin-bottom: 80px;
+}
+
+.map {
+  width: 100%;
+  height: 300px;
+}
+/*==========================
+service.html
+==========================*/
+.subpage--service .page-img {
+  background-image: radial-gradient(rgba(75,174,79,0.2) 20%, #FEF7E5 0), radial-gradient(rgba(75,174,79,0.2) 20%, #FEF7E5 0);
+}
+
+.subpage--service .heading,
+.subpage--service .page-title {
+  @include fontColor(service);
+}
+
+.subpage--service .heading {
+  border-left: 8px getColor(service) solid;
+}
+
+.service-detail {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto 40px;
+  @include mq() {
+    width: 48.1481%;
+    margin-bottom: 0 0 40px 0;
+  }
+}
+
+.service-detail:nth-of-type(odd) {
+  float: none;
+  @include mq() {
+    float: left;
+  }
+}
+
+.service-detail:nth-of-type(even) {
+  float: none;
+  @include mq() {
+    float: right;
+  }
+}
+/*==========================
+vision.html
+==========================*/
+.subpage--vision .page-img {
+  background-image: radial-gradient(rgba(32,149,242,0.2) 20%, #FEF7E5 0), radial-gradient(rgba(32,149,242,0.2) 20%, #FEF7E5 0);
+}
+
+.subpage--vision .heading,
+.subpage--vision .page-title {
+  @include fontColor(vision);
+}
+
+.subpage--vision .heading {
+  border-left: 8px getColor(vision) solid;
+}
+
+.vision-box {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.vision-text {
+  padding: 40px 0;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 2.0;
+}
+
+.vision-text br {
+  display: none;
+  @include mq() {
+    display: inline;
+  }
+}
+
+.vision-detail {
+  width: 100%;
+  margin: 0 auto 40px;
+  max-width: 520px;
+  @include mq() {
+    width: 48.1481%;
+    margin-bottom: 0 0 40px 0;
+  }
+}
+
+.vision-detail:nth-of-type(odd) {
+  float: none;
+  @include mq() {
+    float: left;
+  }
+}
+
+.vision-detail:nth-of-type(even) {
+  float: none;
+  @include mq() {
+    float: right;
+  }
+}
+
+.vision-title {
+  font-size: 16px;
+  font-size: 1.6rem;
+  @include fontColor(vision);
+  padding: 0 0 10px;
+  border-bottom: 1px getColor(vision) dotted;
+}
+
+.vision-detail p {
+  padding: 20px 0;
+}
+/*==========================
+privacy.html
+==========================*/
+.subpage--privacy .page-img {
+  background-image: radial-gradient(rgba(255,76,76,0.2) 20%, #FEF7E5 0), radial-gradient(rgba(255,76,76,0.2) 20%, #FEF7E5 0);
+}
+
+.subpage--privacy .page-title {
+  line-height: 1.0;
+  @include fontColor(privacy);
+  @include mq() {
+    line-height: inherit;
+  }
+}
+
+.subpage--privacy .heading {
+  @include fontColor(privacy);
+  border-left: 8px getColor(privacy) solid;
+}
+
+.subpage--privacy .page-title br {
+  display: block;
+  @include mq() {
+    display: none;
+  }
+}
+
+.privacy-title {
+  @include fontColor(privacy);
+  margin-bottom: 10px;
+}
+
+.privacy-text {
+  margin-bottom: 40px;
+}
+
+.privacy-box ul {
+  margin-bottom: 40px;
+  padding-left: 20px;
+}
+
+.company-info {
+  margin-bottom: 80px;
+}
+
+.company-info .privacy-title {
+  color: #333;
+}
+
+.company-info ul {
+  list-style-type: none;
+}
+
+/*==========================
+contact.html
+==========================*/
+.subpage--contact .page-img {
+  background-image: radial-gradient(rgba(75,174,79,0.2) 20%, #FEF7E5 0), radial-gradient(rgba(75,174,79,0.2) 20%, #FEF7E5 0);
+}
+
+.subpage--contact .heading,
+.subpage--contact .page-title {
+  @include fontColor(contact);
+}
+
+.subpage--contact .heading {
+  border-left: 8px getColor(contact) solid;
+}
+
+.mailform__item,
+.mailform__input {
+  @include mq() {
+    margin-bottom: 0;
+    padding: 1.5em;
+  }
+}
+.mailform__item {
+  &:first-of-type {
+    border-top: 1px solid #ccc;
+  }
+  @include mq() {
+    padding-top: 1.8em;
+    background-color: #f7f7f7;
+    width: 30%;
+    border-bottom: 1px solid #ccc;
+  }
+}
+.mailform__item small {
+  @include fontColor(info);
+  padding-left: .5em;
+  font-size: 80%;
+}
+.mailform__input {
+  border-bottom: 1px solid #ccc;
+  @include mq() {
+    &:first-of-type {
+      border-top: 1px solid #ccc;
+    }
+    width: 70%;
+  }
+}
+.mailform__input--radio {
+  @include mq() {
+    padding-top: 2.1em;
+  }
+}
+.mailform__submit {
+  padding-top: 2em;
+  text-align: center;
+}
+.input-text {
+  background-color: #eee;
+  border: none;
+  padding: 1em;
+}
+.input-radio {
+  margin-bottom: .35em;
+}
+.input-btn {
+  display: inline-block;
+  padding: 1em 2em;
+  @include fontColor(info);
+  border-radius: 30px;
+  border: 2px getColor(info) solid;
+  text-decoration: none;
+  @include mq() {
+    width: auto;
+  }
+}
+.input-btn:hover {
+  color: #fff;
+  @include bgColor(info);
+  opacity: 1;
+}
+
+/*==========================
+thanks.html
+==========================*/
+
+.subpage--thanks .page-img {
+  background-image: radial-gradient(rgba(75,174,79,0.2) 20%, #FEF7E5 0), radial-gradient(rgba(75,174,79,0.2) 20%, #FEF7E5 0);
+}
+
+.subpage--thanks .heading,
+.subpage--thanks .page-title {
+  @include fontColor(thanks);
+}
+
+.subpage--thanks .heading {
+  border-left: 8px getColor(thanks) solid;
+}
+.thanks-exit-btn {
+  text-align: center;
+  padding-top: 2em;
+  @include mq() {
+    text-align: left;
+  }
+}

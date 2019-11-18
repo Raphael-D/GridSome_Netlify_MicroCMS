@@ -5,6 +5,15 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome',
-  plugins: []
+  siteName: 'Gridsome hogehoge',
+  // siteUrl: '/',
+  plugins: [],
+  // templates: {
+  //   Post: [
+  //     {
+  //       path: '/blog/:permalink',
+  //       component: './src/pages/Works.vue'
+  //     }
+  //   ]
+  // }
 }
