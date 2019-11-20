@@ -5,6 +5,19 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const axios = require('axios')
+
+// Equip Array Iterator function.
+const equipIterator = function(target) {
+    target[Symbol.iterator] = function() {
+      let i = 0;
+      return {
+        next() {
+          return target.length <= i ? { done: true } : { value:  target[i++] };
+        }
+      }
+    }
+}
+
 module.exports = function (api) {
 
   // Dynamic Routing
@@ -28,23 +41,8 @@ module.exports = function (api) {
         console.log(err);
       })
     const collection = actions.addCollection('Works');
-    data[Symbol.iterator] = function () {
-      let index = 0;
-      return {
-        next() {
-          if (data.length <= index) {
-            return {
-              done: true
-            };
-          } else {
-            return {
-              value: data[index++]
-            };
-          }
-        }
-      };
-    };
     for (const item of data) {
+      console.log(item);
       collection.addNode({
         id: item.id,
         title: item.page_title,
