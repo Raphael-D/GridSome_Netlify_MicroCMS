@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'No ql',
+  siteName: 'Using “Dynamic Routing” on GridSome + MicroCMS.',
   // siteUrl: '/',
   plugins: [],
   // templates: {

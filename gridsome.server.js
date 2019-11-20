@@ -5,6 +5,19 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const axios = require('axios')
+
+// Enable iterator to mydata
+const equipIterator = function(target) {
+  target[Symbol.iterator] = function() {
+    let i = 0;
+    return {
+      next() {
+        return target.length <= i ? { done: true } : { value: target[i++] };
+      }
+    }
+  }
+  return target;
+}
 module.exports = function (api) {
 
   // Get microCMS data
@@ -12,25 +25,11 @@ module.exports = function (api) {
     let mydata = await axios.get('https://codehack.microcms.io/api/v1/blog', {
       headers: {'X-API-KEY': '6ccedd0a-a90d-45f3-801f-1a10abf108f4'}
     }).then(res => {
-      console.log(res.data.contents)
-      return res.data.contents;
+      return equipIterator(res.data.contents);
     }).catch(err => {
       console.log(err);
     })
 
-    // Enable iterator to mydata
-    mydata[Symbol.iterator] = function () {
-      let index = 0;
-      return {
-        next() {
-          if (mydata.length <= index) {
-            return {done: true};
-          } else {
-            return {value: mydata[index++]};
-          }
-        }
-      };
-    };
 
     // Take out permalink, then push to keys.
     for(const items of mydata) {
