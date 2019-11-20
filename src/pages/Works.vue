@@ -59,9 +59,47 @@
     <nav class="local-link">
         <a @click="movePost(item.permalink)" v-for="item in blog" :key="item.id" class="local-link__item" :href="'/works/' + item.permalink">{{ item.page_title }}</a>
       </nav>
+
+      <div class="works-post">
+        <h1 class="works-post__title">Post list from GraphQL</h1>
+        <table class="works-post__table">
+          <tr class="works-post__list works-post__list--title">
+            <th>id</th>
+            <th>title</th>
+            <th>slug</th>
+            <th>date</th>
+            <th>content</th>
+          </tr>
+          <tr v-for="item in $page.allWorks.edges" :key="item.node.permalink" class="works-post__list">
+            <td>{{ item.node.id }}</td>
+            <td>{{ item.node.title }}</td>
+            <td>{{ item.node.slug }}</td>
+            <td>{{ item.node.date }}</td>
+            <td v-html="item.node.content"></td>
+          </tr>
+        </table>
+      </div>
+
     </div>
+
   </Layout>
 </template>
+
+<page-query>
+query {
+  allWorks {
+    edges {
+      node {
+        id
+        title
+        slug
+        date
+        content
+      }
+    }
+  }
+}
+</page-query>
 
 <script>
 import axios from 'axios'
@@ -160,5 +198,42 @@ export default {
   display: inline-block;
   border: 1px solid #000;
   padding: .2em;
+}
+// Works post
+
+.works-post {
+  padding-top: 100px;
+  &__title {
+    color: orange;
+    font-size: 3em;
+    text-align: center;
+    background-color: green;
+    margin-bottom: 1em;
+  }
+  &__table {
+    margin-bottom: 100px;
+    
+  }
+  &__list {
+    border-bottom: 1px solid gray;
+    &--title {
+      background-color: darkolivegreen;
+      color: darksalmon;
+
+    }
+    & td, & th {
+      padding: .5em;
+      border-left: 1px solid gray;
+      &:last-of-type {
+        border-right: 1px solid gray;
+      }
+    }
+    & th:not(:first-of-type){
+      border-left-color: #fff;
+    }
+    & th:not(:last-of-type) {
+      border-right-color: #fff;
+    }
+  }
 }
 </style>
