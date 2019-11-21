@@ -21,9 +21,7 @@ const equipIterator = function(target) {
 
 module.exports = function (api) {
   // Dynamic Routing
-  api.createPages(async ({
-    createPage
-  }) => {
+  api.createPages(async ({createPage}) => {
 
   })
 
