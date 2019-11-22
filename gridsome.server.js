@@ -19,36 +19,44 @@ const equipIterator = function(target) {
   return target;
 }
 
+// Get microCMS Post
+const getMicroCMSPosts = (URL, API_KEY) => {
+  return axios.get(URL, { headers: { 'X-API-KEY': API_KEY } })
+  .then(res => { return equipIterator(res.data.contents) })
+  .catch(err => { console.log(err) })
+}
+const worksPosts = getMicroCMSPosts('https://codehack.microcms.io/api/v1/blog', '6ccedd0a-a90d-45f3-801f-1a10abf108f4');
+
 module.exports = function (api) {
   // Dynamic Routing
-  api.createPages(async ({createPage}) => {
-
-  })
+  // api.createPages(async ({createPage}) => {
+  //   let post = await worksPosts;
+  //   for(const pathto of post) {
+  //     console.log('GET Permalink : ', pathto.permalink)
+  //     createPage(({
+  //       path: '/works/' + pathto.permalink,
+  //       component: './src/pages/Works.vue'
+  //     }))
+  //   }
+  // })
 
   // Import to GraphQL from MicroCMS.
-  api.loadSource(async actions => {
-    let data = await axios.get('https://codehack.microcms.io/api/v1/blog', {
-        headers: {
-          'X-API-KEY': '6ccedd0a-a90d-45f3-801f-1a10abf108f4'
-        }
-      })
-      .then(res => {
-        return equipIterator(res.data.contents);
-      })
-      .catch(err => {
-        console.log(err);
-      })
-    // data = equipIterator(data);
+  api.loadSource(async actions  => {
+    let post = await worksPosts;
+    let i = 0;
     const collection = actions.addCollection('Works');
-    for (const item of data) {
-      console.log(item);
+    for (const item of post) {
       collection.addNode({
         id: item.id,
         title: item.page_title,
         slug: item.permalink,
         date: item.updatedAt,
-        content: item.content
+        content: item.content,
+        path: item.permalink
       })
     }
   })
+
+  // Add a new field with arguments
+  
 }

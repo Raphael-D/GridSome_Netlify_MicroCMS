@@ -69,6 +69,7 @@
             <th>slug</th>
             <th>date</th>
             <th>content</th>
+            <th>link</th>
           </tr>
           <tr v-for="item in $page.allWorks.edges" :key="item.node.permalink" class="works-post__list">
             <td>{{ item.node.id }}</td>
@@ -76,6 +77,7 @@
             <td>{{ item.node.slug }}</td>
             <td>{{ item.node.date }}</td>
             <td v-html="item.node.content"></td>
+            <td><g-link :to="item.node.path">{{ item.node.title }}</g-link></td>
           </tr>
         </table>
       </div>
@@ -93,8 +95,9 @@ query {
         id
         title
         slug
-        date
+        date (format: "YYYY年MM月DD日 HH:mm:ss")
         content
+        path
       }
     }
   }
