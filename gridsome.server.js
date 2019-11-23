@@ -54,6 +54,7 @@ module.exports = function (api) {
         content: item.content,
         path: item.permalink
       })
+      console.log('From server.js : ', item.permalink);
     }
   })
 

@@ -11,10 +11,11 @@ module.exports = {
   templates: {
     Works: [
       {
-        path: (node) => {
-          return `/works/${node.path}/`
-        },
-        component: './src/templates/works/WorksPost.vue'
+        // path: (node) => {
+        //   return `/works/${node.path}/`
+        // },
+        path: '/works/:path',
+        component: './src/templates/WorksPost.vue'
       }
     ]
   }
