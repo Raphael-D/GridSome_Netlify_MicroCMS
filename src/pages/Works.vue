@@ -102,6 +102,7 @@ query {
     }
   }
 }
+
 </page-query>
 
 <script>
@@ -140,11 +141,7 @@ export default {
   },
   mounted() {
     this.fetchArticles();
-    // let { id } = this.$route.params
-    console.log(this.$route, 'ROUTE')
     
-    // const response = await fetch(`/works/${id}`)
-    // console.log({id})
   },
   computed: {
     singlePostView() {
