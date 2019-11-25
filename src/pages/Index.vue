@@ -30,7 +30,7 @@
 import axios from 'axios'
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'microCMSをGridSomeで構築してNetlifyで公開するための検証サイト'
   },
   data() {
     return {
