@@ -9,11 +9,12 @@
                 </time>
             </dl>
             <div v-html="$page.works.content"></div>
-            <p>現在のページURL{{ $page.works.path }}</p>
+            <p>現在のページURL：{{ $page.works.path }}</p>
             <hr />
             <ul>
-                <li v-for="item in otherpagelink" :key="item.path">
-                    <g-link :to="item.path">{{ item.title }}</g-link>
+                <li v-for="(item, i) in otherpagelink" :key="i">
+                    {{ i }}
+                    <g-link :to="item.path" @click="allPagelinks">{{ item.title }}</g-link>
                 </li>
             </ul>
             <hr />
@@ -71,7 +72,7 @@ export default {
   methods: {
     allPagelinks() {
       let self = this;
-      let current = self.currentpage;
+      let current = self.getNowPage();
       let allpage = self.allpages;
     for (let items in allpage) {
         if (allpage[items].node.path !== current) {
@@ -79,6 +80,10 @@ export default {
         }
     }
     return this.otherpagelink;
+    },
+    getNowPage() {
+      console.log('/works/' + this.$route.params.path + '/')
+      return '/works/' + this.$route.params.path + '/';
     }
   },
   mounted() {
