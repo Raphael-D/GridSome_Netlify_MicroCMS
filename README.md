@@ -9,12 +9,13 @@ Please tell me what you notice.
 ## necessary functions
 
 ### 1. Get microCMS post data, then it data is send to graphQL.
->OK
+> OK
 
 ### 2. Create single page of MicroCMS post data displays.
->This Now.
+> OK
 
 ### 3. Create pager link lists on post page.
-
+> Just did it
 
 ### 4. Last sequence is create complete static demo site.
+> Now developing
