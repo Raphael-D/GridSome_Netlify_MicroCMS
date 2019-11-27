@@ -14,13 +14,19 @@
             <hr />
 
             <!-- Pager -->
-            <ul>
-                <li v-for="(item, i) in allPagelinks" :key="i">
-                  <div>
-                    <span>前へ：</span>
-                      {{ i }}<g-link :to="item.path">{{item.title}}</g-link>
-                    <span></span>
-                  </div>
+            <ul class="single-post-pager">
+                <li class="single-post-pager__lists" v-for="(item, i) in allPagelinks" :key="i">
+                  
+                    <g-link :to="item.path" class="single-post-pager__link">
+                      <span class="single-post-pager__icon single-post-pager__icon--prev" v-if="pagercondition.prev & i == 0 | !pagercondition.next & i == 0">
+                        <font-awesome-icon :icon="['fas', 'chevron-left']" />
+                      </span>
+                      {{item.title}}
+                      <span class="single-post-pager__icon single-post-pager__icon--next" v-if="pagercondition.next & i == 1 | !pagercondition.prev & i == 0">
+                        <font-awesome-icon :icon="['fas' ,'chevron-right']" />
+                      </span>
+                    </g-link>
+                  
                 </li>
             </ul>
             <hr />
@@ -76,9 +82,8 @@ export default {
       otherpagelink: [],
       debug: 'No data',
       pagercondition: {
-        first: false,
-        both: false,
-        last: false
+        prev: false,
+        next: false
       }
     }
   },
@@ -100,7 +105,6 @@ export default {
       let current = self.currentpage;
       let allpage = self.allpages;
       let indexNum = [];
-      let pagerstate = self.pagercondition;
 
 
       for (let items in allpage) {
@@ -110,18 +114,20 @@ export default {
         // First Key Condition
         if(indexNum.indexOf(this.getNowPage) === 0) {
           this.otherpagelink.push(allpage[1].node)
-          pagerstate.first = true;
+          this.pagercondition.prev = false;
+          this.pagercondition.next = true;
           // console.log("First link condition",this.otherpagelink)
-          return this.otherpagelink, pagerstate;
+          return this.otherpagelink;
         }
 
 
         // Last key Condition
         if(indexNum.indexOf(this.getNowPage) === allpage.length -1) {
           this.otherpagelink.push(allpage[items -1].node)
-          pagerstate.last = true;
+          this.pagercondition.prev = true;
+          this.pagercondition.next = false;
           // console.log("Last link condition",this.otherpagelink)
-          return this.otherpagelink, pagerstate;
+          return this.otherpagelink;
         }
 
 
@@ -129,9 +135,10 @@ export default {
         if(indexNum.indexOf(this.getNowPage) !== 0 && indexNum.indexOf(this.getNowPage) !== allpage.length -1 && indexNum.indexOf(this.getNowPage) !== -1) {
             this.otherpagelink.push(allpage[indexNum.indexOf(this.getNowPage) -1].node);
             this.otherpagelink.push(allpage[indexNum.indexOf(this.getNowPage) +1].node);
-            pagerstate.both = true;
+            this.pagercondition.prev = true;
+            this.pagercondition.next = true;
             // console.log("Middle link condition : ",this.otherpagelink)
-            return this.otherpagelink, pagerstate;
+            return this.otherpagelink;
         }
         
         

@@ -6,13 +6,19 @@
     "develop:gridsome": "gridsome develop",
     "explore:gridsome": "gridsome explore",
     "build:sass": "webpack",
-    "dev": "run-s build:sass develop:gridsome",
+    "watch:sass": "webpack --watch",
+    "dev": "run-p watch:sass develop:gridsome",
     "build": "run-s build:sass build:gridsome"
   },
   "dependencies": {
     "gridsome": "^0.7.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-regular-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/vue-fontawesome": "^0.1.8",
     "axios": "^0.19.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",

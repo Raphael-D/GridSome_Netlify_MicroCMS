@@ -796,3 +796,35 @@ index.html
   border: 2px getColor(info) solid;
   text-decoration: none;
 }
+
+
+/*==========================
+Modules
+==========================*/
+// Post single page
+.single-post-pager {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  border: 1px solid #f0f;
+  justify-content: space-between;
+  &__list {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  &__icon {
+    // width: 1em;
+    // height: 1em;
+    // background-color: green;
+    display: block;
+    &--prev {
+      float: left;
+    }
+    &--next {
+      float: right;
+    }
+    svg {
+      color: red;
+    }
+  }
+}
