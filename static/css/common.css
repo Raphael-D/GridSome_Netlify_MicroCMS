@@ -702,3 +702,24 @@ index.html
   border: 2px #4bae4f solid;
   text-decoration: none; }
 
+/*==========================
+Modules
+==========================*/
+.single-post-pager {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  border: 1px solid #f0f;
+  justify-content: space-between; }
+  .single-post-pager__list {
+    display: flex;
+    flex-wrap: nowrap; }
+  .single-post-pager__icon {
+    display: block; }
+    .single-post-pager__icon--prev {
+      float: left; }
+    .single-post-pager__icon--next {
+      float: right; }
+    .single-post-pager__icon svg {
+      color: red; }
+
