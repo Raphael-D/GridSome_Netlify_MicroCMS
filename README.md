@@ -24,3 +24,13 @@ Please tell me what you notice.
 ### 1. Compile each SCSS file into each external CSS file and generate it in a static directory.
 > This behavior by webpack.config.js. This is because the CSS file is statically read and used like a general site like WordPress, other static site.
 > In other words to edit CSS, edit the scss file placed in the assets directory. Include files are excluded from the multi-compilation export target, but are reflected in the include source CSS.
+
+### 2. Using Template "WorksPost.vue" on Post page of "Works" category.
+> General websites should be dynamic generate to page at post type single page.
+> If you didn't they config you'll be create all each post page. It is no good.
+> How do you if your post is over 100+ counts at someday because?
+> All right. It config is exsit here. "gridsome.config.js"
+> Reference: <a href="https://gridsome.org/docs/templates/" target="_blank">https://gridsome.org/docs/templates/</a>
+
+## Looking for a way?
+
