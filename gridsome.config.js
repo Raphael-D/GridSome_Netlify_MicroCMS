@@ -11,9 +11,6 @@ module.exports = {
   templates: {
     Works: [
       {
-        // path: (node) => {
-        //   return `/works/${node.path}/`
-        // },
         path: '/works/:path',
         component: './src/templates/WorksPost.vue'
       }
