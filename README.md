@@ -47,4 +47,4 @@ Please tell me what you notice.
 
 ### Other question or IMO?
 > Here: <a href="mailto:support@codehack.dev">support@codehack.dev</a>
-Please tell me what you notice.
+Please tell me what you notice. GOODEV XD
