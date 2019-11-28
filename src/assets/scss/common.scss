@@ -10,10 +10,27 @@
 /*==========================
 Layout
 ==========================*/
-.l-wrapper {}
-.l-side {}
-.l-header {}
-.l-footer {}
+.l-section {
+  @include verticalMargin();
+  @include horizontalPadding();
+}
+.l-wrapper {
+  max-width: 960px;
+  @include verticalMargin(wrapper);
+  @include horizontalPadding(wrapper);
+}
+.l-side {
+  @include verticalMargin(side);
+  @include horizontalPadding(side);
+}
+.l-header {
+  @include verticalMargin(header);
+  @include horizontalPadding(header);
+}
+.l-footer {
+  @include verticalMargin(footer);
+  @include horizontalPadding(footer);
+}
 /*==========================
 Component
 ==========================*/

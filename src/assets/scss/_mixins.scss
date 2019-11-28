@@ -88,3 +88,29 @@ $Colors: (
 @function getColor($value: init) {
   @return #{map-get($Colors, $value)};
 }
+// Vertical space values
+$verticalSpace: (
+	'section': 3em,
+	'wrapper': 0,
+	'side': 0,
+	'header': 0,
+	'footer': 0
+);
+// Set vertical margins
+@mixin verticalMargin($value: section) {
+	margin-top: #{map-get($verticalSpace, $value)};
+	margin-bottom: #{map-get($verticalSpace, $value)};
+}
+// Horizontal space values
+$horizontalSpace: (
+	'section': 0,
+	'wrapper': 1em,
+	'side': 1em,
+	'header': 1em,
+	'footer': 1em
+);
+// Set horizontal padding
+@mixin horizontalPadding($value: section) {
+	padding-right: #{map-get($horizontalSpace, $value)};
+	padding-left: #{map-get($horizontalSpace, $value)};
+}

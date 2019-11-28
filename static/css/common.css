@@ -8,6 +8,37 @@
 /*==========================
 Layout
 ==========================*/
+.l-section {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  padding-right: 0;
+  padding-left: 0; }
+
+.l-wrapper {
+  max-width: 960px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 1em;
+  padding-left: 1em; }
+
+.l-side {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 1em;
+  padding-left: 1em; }
+
+.l-header {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 1em;
+  padding-left: 1em; }
+
+.l-footer {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 1em;
+  padding-left: 1em; }
+
 /*==========================
 Component
 ==========================*/

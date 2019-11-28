@@ -282,3 +282,17 @@ svg:not([fill]) {
 [aria-disabled] {
   cursor: default;
 }
+
+/*
+* Added to my styles
+*/
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
+  font-size: 1.4rem;
+}
+ul {
+  list-style: none;
+}
