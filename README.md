@@ -32,5 +32,19 @@ Please tell me what you notice.
 > All right. It config is exsit here. "gridsome.config.js"
 > Reference: <a href="https://gridsome.org/docs/templates/" target="_blank">https://gridsome.org/docs/templates/</a>
 
+### 3. Asyncronized npm run sequence for compile to SCSS files.
+> "Compile each SCSS file", This function did must completed to before run gridsome server.
+> Then, they must be watch always at after completed function.
+> Separeted sequence each behavior for it but commands is one, "npm run dev".
+
 ## Looking for a way?
 
+### How to import from the MicroCMS post data to GraphQL?
+> Here: gridsome.server.js : "Import to GraphQL from MicroCMS."
+
+### How to use GraphQL?
+> Here: "/src/templates/WorksPost.vue" : "<page-query> ~ </page-query>"
+
+### Other question or IMO?
+> Here: <a href="mailto:support@codehack.dev">support@codehack.dev</a>
+Please tell me what you notice.
