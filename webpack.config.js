@@ -64,7 +64,7 @@ const confSass = {
   entry: {
     common: './src/assets/scss/common.scss',
     style: './src/assets/scss/style.scss',
-    reset: './src/assets/scss/reset.scss'
+    ress: './src/assets/scss/ress.scss'
   },
   output: {
     // 全体の設定

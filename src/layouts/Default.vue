@@ -26,7 +26,7 @@ export default {
   name: 'default',
   metaInfo: {
     link: [
-      { rel: 'stylesheet', href: '/css/reset.css' },
+      { rel: 'stylesheet', href: '/css/ress.css' },
       { rel: 'stylesheet', href: '/css/common.css' }
     ]
   }

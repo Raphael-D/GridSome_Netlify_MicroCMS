@@ -1,22 +1,26 @@
-//Config
+// Media query value
 $mq-breakPoints: (
 	'tablet': 768px,
 	'pc': 1025px,
 );
+// Media query mixin
 @mixin mq($breakPoint: tablet) {
 	@media screen and (min-width: #{map-get($mq-breakPoints, $breakPoint)}) {
 		@content;
 	}
 }
+// Media query mixin for Smart Phone Land Scape Only
 @mixin spLandScapeOnly() {
   @media only screen and (orientation:landscape) and (max-width: 812px) {
     @content;
   }
 }
+// Margin auto mixin
 @mixin mAuto($right: auto, $left: auto) {
 	margin-right: $right;
 	margin-left: $left;
 }
+// Centering for vertical and holizontal mixin
 @mixin centeRingXY($state: absolute) {
 	position: $state;
 	-webkit-transform: translate(-50%, -50%);
@@ -24,6 +28,7 @@ $mq-breakPoints: (
 	top: 50%;
 	left: 50%;
 }
+// Centering for holizontal mixin
 @mixin centeRingX($state: absolute, $topValue: 0) {
 	position: $state;
 	-webkit-transform: translateX(-50%);
@@ -31,6 +36,7 @@ $mq-breakPoints: (
 	top: $topValue;
 	left: 50%;
 }
+// Centering for vertical mixin
 @mixin centerRingY($state: absolute, $leftValue: 0) {
 	position: $state;
 	-webkit-transform: translateY(-50%);
@@ -38,17 +44,19 @@ $mq-breakPoints: (
 	top: 50%;
 	left: $leftValue;
 }
+// Absolute position mixin (you can select which absolute)
 @mixin ptlz($state: absolute, $y: 0, $x: 0, $z: 0) {
 	position: $state;
 	top: $y;
 	left: $x;
 	z-index: $z;
 }
+// Timing function adjust mixin
 @mixin timingFunc($time: 0.4s) {
 	-webkit-transition: $time ease-in-out;
 	transition: $time ease-in-out;
 }
-//Colors
+// Color config value
 $Colors: (
   'init': transparent,
 	'base': #f19149,
@@ -64,16 +72,19 @@ $Colors: (
   'contact': #4bae4f,
   'thanks': #4bae4f
 );
+// Set font color  mixin
 @mixin fontColor($value: base) {
 	color: #{map-get($Colors, $value)};
 }
+// Set background color mixin
 @mixin bgColor($value: main) {
 	background-color: #{map-get($Colors, $value)};
 }
+// Set border color mixin
 @mixin borderColor($value: main) {
 	border-color: #{map-get($Colors, $value)};
 }
+// Get color value function
 @function getColor($value: init) {
   @return #{map-get($Colors, $value)};
 }
-//Base
