@@ -16,7 +16,13 @@ Please tell me what you notice.
 ### 3. Create pager link lists on post page.
 > Just did it
 
-### 4. Last sequence is create complete static demo site.
+### 4. Create basic website structure
+> Now developing
+
+### 5. Create minimal SCSS
+> Now developing
+
+### 5. Last sequence is create complete static demo site.
 > Now developing
 
 
