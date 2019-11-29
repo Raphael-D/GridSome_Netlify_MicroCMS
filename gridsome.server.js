@@ -5,7 +5,7 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const axios = require('axios')
-
+const YOUR_API_KEY = '6ccedd0a-a90d-45f3-801f-1a10abf108f4';
 // Equip Iterator
 const equipIterator = function(target) {
   target[Symbol.iterator] = function() {
@@ -22,10 +22,21 @@ const equipIterator = function(target) {
 // Get microCMS Post
 const getMicroCMSPosts = (URL, API_KEY) => {
   return axios.get(URL, { headers: { 'X-API-KEY': API_KEY } })
-  .then(res => { return equipIterator(res.data.contents) })
+  .then(res => { 
+    // return typeof res.data === 'object' ? res.data : typeof res.data.contents === 'object' ? equipIterator(res.data.contents) : false;
+    
+    if(res.data.contents) {
+      return equipIterator(res.data.contents);
+    } else {
+      console.log("______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",res)
+      return res.data
+    }
+    
+  })
   .catch(err => { console.log(err) })
 }
-const worksPosts = getMicroCMSPosts('https://codehack.microcms.io/api/v1/blog', '6ccedd0a-a90d-45f3-801f-1a10abf108f4');
+const homePosts = getMicroCMSPosts('https://codehack.microcms.io/api/v1/home', YOUR_API_KEY);
+const worksPosts = getMicroCMSPosts('https://codehack.microcms.io/api/v1/blog', YOUR_API_KEY);
 
 module.exports = function (api) {
   // Dynamic Routing
@@ -40,7 +51,30 @@ module.exports = function (api) {
   //   }
   // })
 
-  // Import to GraphQL from MicroCMS.
+
+  // Import the HomePost to GraphQL from MicroCMS.
+  api.loadSource(async actions => {
+    let post = await homePosts;
+    // post = equipIterator(post);
+    let i = 0;
+    const  collection = actions.addCollection('Home');
+
+      collection.addNode({
+        id: post.id,
+        title: post.page_title,
+        date: post.updatedAt,
+        content: post.content,
+        introduce: post.introduce,
+        hero: post.hero,
+        carousel: post.carousel,
+        feature: post.feature
+      })
+      // console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",post.page_title)
+      // console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",post.date)
+
+  })
+
+  // Import the WorksPost to GraphQL from MicroCMS.
   api.loadSource(async actions  => {
     let post = await worksPosts;
     let i = 0;
@@ -54,10 +88,10 @@ module.exports = function (api) {
         content: item.content,
         path: item.permalink
       })
-      console.log('From server.js : ', i, ":", item.permalink);
+      console.log('From server.js : ', i, ":", item.page_title);
     }
   })
-
+  
   // Add a new field with arguments
   
 }

@@ -15,45 +15,56 @@
           <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
           <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
         </p>
-        <h1 style="background-color: #00f; color: #fff; padding: .5em; text-align: center;">hogehogehoge</h1>
-        <ul>
-          <li v-for="posts in news" :key="posts.id">
-            <h1>{{posts}}</h1>
-            <span class="news-date">{{ convertDate(posts.news_date) }} </span>
-            <span class="news-text">{{ posts.news_title }}</span>
-          </li>
-        </ul>
+        <h1 style="background-color: #00f; color: #fff; padding: .5em; text-align: center;">{{ $page.allHome.edges[0].node.title }}</h1>
+        
       </div>
     </section>
   </Layout>
 </template>
 
+<page-query>
+query {
+  allHome {
+  	edges {
+      node {
+        id
+        title
+        date
+        introduce {
+          intro_title
+          intro_content
+          intro_image {
+            url
+          }
+        }
+        hero {
+          url
+        }
+        carousel {
+          id
+          carousel {
+            url
+          }
+        }
+        feature {
+          feature_title
+          feature_image {
+            url
+          }
+          feature_content
+        }
+      }
+    }
+  }
+}
+
+</page-query>
 <script>
-import axios from 'axios'
 export default {
   metaInfo: {
     title: 'microCMSをGridSomeで構築してNetlifyで公開するための検証サイト'
   },
-  data() {
-    return {
-      news: null
-    }
-  },
   methods: {
-    fetchArticles() {
-          axios
-            .get('https://codehack.microcms.io/api/v1/news', {
-                headers: {'X-API-KEY': '6ccedd0a-a90d-45f3-801f-1a10abf108f4'}
-            })
-            .then(res => {
-                // console.log(res.data);
-                this.news = res.data.contents
-
-            })
-            .catch(err => {
-                console.log(err);
-            })
-      },
       convertDate(value) {
         let date = value.split('-'),
             getYear = date[0].toString(),
@@ -63,10 +74,6 @@ export default {
             stringDate =  getYear + '/' + getMonth + '/' + convertDay;
             return stringDate
       }
-
-  },
-  mounted() {
-    this.fetchArticles()
   }
 }
 </script>
