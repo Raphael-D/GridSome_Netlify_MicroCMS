@@ -16,6 +16,13 @@
           <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
         </p>
         <h1 style="background-color: #00f; color: #fff; padding: .5em; text-align: center;">{{ $page.allHome.edges[0].node.title }}</h1>
+        <ul>
+          <li v-for="item in $page.allHome.edges[0].node.feature" :key="item.id">
+            <h2>{{ item.feature_title }}</h2>
+            <img :src="item.feature_image.url">
+            <p>{{ item.feature_content }}</p>
+          </li>
+        </ul>
         
       </div>
     </section>
