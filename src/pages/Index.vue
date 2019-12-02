@@ -1,11 +1,13 @@
 <template>
   <Layout>
     <div class="hero">
+      <ClientOnly>
         <carousel class="hero__carousel" :per-page="1" :mouse-drag="false" :autoplay="true">
           <slide class="hero__image" v-for="item in $page.allHome.edges[0].node.carousel" :key="item.id">
             <img :src="item.carousel.url" />
           </slide>
         </carousel>
+        </ClientOnly>
         <h1 class="hero__heading">{{ $page.allHome.edges[0].node.title }}</h1>
     </div>
     <nav class="l-wrapper gridsome-links">
