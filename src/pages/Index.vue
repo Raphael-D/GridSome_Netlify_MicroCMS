@@ -77,16 +77,16 @@ query {
 
 </page-query>
 <script>
-import {Carousel,Slide} from 'vue-carousel';
+// import {Carousel,Slide} from 'vue-carousel';
 
 export default {
   components: {
     Carousel: () =>
-      import('vue-carousel/src/index')
+      import('vue-carousel')
       .then(m => m.Carousel)
       .catch(),
     Slide: () =>
-      import('vue-carousel/src/index')
+      import('vue-carousel')
       .then(m => m.Slide)
       .catch()
   },
