@@ -269,9 +269,9 @@ svg:not([fill]) {
 [aria-disabled] {
   cursor: default; }
 
-/*
+/*****************************************
 * Added to my styles
-*/
+******************************************/
 html {
   font-size: 62.5%; }
 
@@ -281,4 +281,15 @@ body {
 
 ul {
   list-style: none; }
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+  a:hover {
+    opacity: .8; }
 
