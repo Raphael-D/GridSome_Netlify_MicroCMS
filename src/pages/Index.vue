@@ -1,35 +1,36 @@
 <template>
   <Layout>
     <div class="hero">
-        <ul class="hero__carousel">
-          <li class="hero__image" v-for="item in $page.allHome.edges[0].node.carousel" :key="item.id">
+        <carousel class="hero__carousel" :per-page="1" :mouse-drag="false" :autoplay="true">
+          <slide class="hero__image" v-for="item in $page.allHome.edges[0].node.carousel" :key="item.id">
             <img :src="item.carousel.url" />
-          </li>
-        </ul>
+          </slide>
+        </carousel>
         <h1 class="hero__heading">{{ $page.allHome.edges[0].node.title }}</h1>
     </div>
+    <nav class="l-wrapper gridsome-links">
+          <a href="https://gridsome.org/docs/" target="_blank" rel="noopener"><font-awesome-icon :icon="['fab', 'readme']"/>Gridsome Docs</a>
+          <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener"><font-awesome-icon :icon="['fab', 'github']"/>Gridsome GitHub</a>
+          <a href="https://github.com/Raphael-D/GridSome_Netlify_MicroCMS" target="_blank"><font-awesome-icon :icon="['fab', 'github']"/>開発中のレポジトリはこちら</a>
+    </nav>
     <section class="l-section">
       <div class="l-wrapper">
         <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-
-        <!-- <h1>日本のフロントエンドのためのJAMStack開発中サイト by GridSome, Netlify, MicroCMS, Github</h1>
-        <h1 class="ruby-text">Developing JAMStack by GridSome, Netlify, MicroCMS, Github for FrontEnd in Japan</h1>
-        <a target="_blank" href="https://github.com/Raphael-D/GridSome_Netlify_MicroCMS">
-          ソースはこちら<span class="ruby-text">Source here</span>
-        </a><small>※最も進行しているのは「feature」ブランチです。<span class="ruby-text">The most advanced is the “feature” branch.</span></small> -->
-
-        <p class="home-links">
-          <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-          <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-        </p>
-        
-        <ul>
-          <li v-for="item in $page.allHome.edges[0].node.feature" :key="item.id">
-            <h2>{{ item.feature_title }}</h2>
-            <img :src="item.feature_image.url">
-            <p>{{ item.feature_content }}</p>
+        <section class="l-section">
+        <h2 class="section-title">Why choose this JAMStack?</h2>
+        <ul class="feature">
+          <li class="feature__list" v-for="item in $page.allHome.edges[0].node.feature" :key="item.id">
+            
+            <div class="feature__image">
+              <img :src="item.feature_image.url" :alt="item.feature_title">
+            </div>
+            <div class="feature__content">
+              <h3 class="feature__title">{{ item.feature_title }}</h3>
+              <p class="feature__detail">{{ item.feature_content }}</p>
+            </div>
           </li>
         </ul>
+        </section>
         
       </div>
     </section>
@@ -99,7 +100,9 @@ export default {
 </script>
 
 <style>
-.home-links a {
-  margin-right: 1rem;
+.VueCarousel-pagination {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
 }
 </style>

@@ -8,6 +8,11 @@
 /*==========================
 Utility
 ==========================*/
+[data-prefix="fab"],
+[data-prefix="far"],
+[data-prefix="fas"] {
+  margin-right: .5em; }
+
 .logo {
   max-width: 100%;
   width: inherit; }
@@ -84,11 +89,66 @@ Component
 /*==========================
 Modules
 ==========================*/
+.section-title {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: .5em;
+  color: #0d2538; }
+
 .hero__heading {
-  background-color: #000;
-  color: #fff;
+  background-color: #0d2538;
+  color: #00A672;
   padding: .2em 1em;
-  text-align: center; }
+  text-align: center;
+  font-size: 1.6rem;
+  padding-top: .5em;
+  padding-bottom: .5em; }
+
+.gridsome-links {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  line-height: 15px;
+  padding-top: .5em;
+  padding-bottom: .5em; }
+  .gridsome-links a {
+    margin-right: 1em;
+    padding-left: 1em;
+    display: block;
+    color: #3b7aad; }
+    .gridsome-links a:not(:first-of-type) {
+      border-left: 1px solid #0d2538; }
+
+.feature__list {
+  width: 100%;
+  padding: 0 1em;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4em; }
+  .feature__list:last-of-type {
+    margin-bottom: 0; }
+
+.feature__image {
+  width: 100%; }
+
+.feature__content {
+  width: 100%;
+  padding-left: 3em; }
+
+.feature__title {
+  text-align: center;
+  margin-bottom: .5em;
+  font-size: 2.4rem; }
+
+.feature__list:nth-of-type(2n) .feature__image {
+  order: 2; }
+
+.feature__list:nth-of-type(2n) .feature__content {
+  padding-left: 0;
+  padding-right: 3em; }
 
 .single-post-pager {
   list-style: none;
