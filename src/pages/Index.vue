@@ -79,22 +79,28 @@ import {Carousel,Slide} from 'vue-carousel';
 
 export default {
   components: {
-    Carousel,
-    Slide
+    Carousel: () =>
+      import('vue-carousel/src/index')
+      .then(m => m.Carousel)
+      .catch(),
+    Slide: () =>
+      import('vue-carousel/src/index')
+      .then(m => m.Slide)
+      .catch()
   },
   metaInfo: {
     title: 'microCMSをGridSomeで構築してNetlifyで公開するための検証サイト'
   },
   methods: {
-      convertDate(value) {
-        let date = value.split('-'),
-            getYear = date[0].toString(),
-            getMonth = date[1].toString(),
-            getDay = date[2].toString(),
-            convertDay = getDay.substring(0, getDay.indexOf("T")),
-            stringDate =  getYear + '/' + getMonth + '/' + convertDay;
-            return stringDate
-      }
+    convertDate(value) {
+      let date = value.split('-'),
+        getYear = date[0].toString(),
+        getMonth = date[1].toString(),
+        getDay = date[2].toString(),
+        convertDay = getDay.substring(0, getDay.indexOf("T")),
+        stringDate = getYear + '/' + getMonth + '/' + convertDay;
+      return stringDate
+    }
   }
 }
 </script>

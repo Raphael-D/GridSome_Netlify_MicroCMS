@@ -28,7 +28,6 @@ const getMicroCMSPosts = (URL, API_KEY) => {
     if(res.data.contents) {
       return equipIterator(res.data.contents);
     } else {
-      console.log("______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",res)
       return res.data
     }
     
@@ -69,9 +68,6 @@ module.exports = function (api) {
         carousel: post.carousel,
         feature: post.feature
       })
-      // console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",post.page_title)
-      // console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",post.date)
-
   })
 
   // Import the WorksPost to GraphQL from MicroCMS.
@@ -88,7 +84,6 @@ module.exports = function (api) {
         content: item.content,
         path: item.permalink
       })
-      console.log('From server.js : ', i, ":", item.page_title);
     }
   })
   
