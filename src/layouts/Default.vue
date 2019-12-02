@@ -1,14 +1,19 @@
 <template>
   <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-        <g-link class="nav__link" to="/works/">Works</g-link>
-      </nav>
+    <header class="l-header header">
+      <div class="l-wrapper header__wrapper">
+        <g-link to="/" class="header__home-link">
+          <g-image class="logo header__logo" alt="Example image" src="~/assets/images/site-logo.png" />
+          <span class="header__site-title">
+            {{ $static.metadata.siteName }}
+          </span>
+        </g-link>
+        <nav class="nav header__nav">
+          <g-link class="header__nav-link" to="/">Home</g-link>
+          <g-link class="header__nav-link" to="/about/">About</g-link>
+          <g-link class="header__nav-link" to="/works/">Works</g-link>
+        </nav>
+      </div>
     </header>
     <slot/>
   </div>

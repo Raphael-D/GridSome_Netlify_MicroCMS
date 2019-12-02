@@ -22,7 +22,7 @@ Please tell me what you notice.
 ### 5. Create minimal SCSS
 > Now developing
 
-### 5. Last sequence is create complete static demo site.
+### 6. Last sequence is create complete static demo site.
 > Now developing
 
 

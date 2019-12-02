@@ -6,6 +6,18 @@
 * Description: Fack me!(female only)
 ==========================*/
 /*==========================
+Utility
+==========================*/
+[data-prefix="fab"],
+[data-prefix="far"],
+[data-prefix="fas"] {
+  margin-right: .5em; }
+
+.logo {
+  max-width: 100%;
+  width: inherit; }
+
+/*==========================
 Layout
 ==========================*/
 .l-section {
@@ -15,6 +27,7 @@ Layout
   padding-left: 0; }
 
 .l-wrapper {
+  margin: 0 auto;
   max-width: 960px;
   margin-top: 0;
   margin-bottom: 0;
@@ -42,9 +55,101 @@ Layout
 /*==========================
 Component
 ==========================*/
+.header__wrapper {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between; }
+
+.header__home-link {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center; }
+
+.header__site-title {
+  width: 12em;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0 1em; }
+
+.header__logo {
+  width: 240px; }
+
+.header__nav {
+  text-align: right;
+  display: flex;
+  flex-wrap: nowrap;
+  font-weight: bold; }
+  .header__nav-link {
+    display: block;
+    margin-left: 1em; }
+
 /*==========================
 Modules
 ==========================*/
+.section-title {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: .5em;
+  color: #0d2538; }
+
+.hero__heading {
+  background-color: #0d2538;
+  color: #00A672;
+  padding: .2em 1em;
+  text-align: center;
+  font-size: 1.6rem;
+  padding-top: .5em;
+  padding-bottom: .5em; }
+
+.gridsome-links {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  line-height: 15px;
+  padding-top: .5em;
+  padding-bottom: .5em; }
+  .gridsome-links a {
+    margin-right: 1em;
+    padding-left: 1em;
+    display: block;
+    color: #3b7aad; }
+    .gridsome-links a:not(:first-of-type) {
+      border-left: 1px solid #0d2538; }
+
+.feature__list {
+  width: 100%;
+  padding: 0 1em;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4em; }
+  .feature__list:last-of-type {
+    margin-bottom: 0; }
+
+.feature__image {
+  width: 100%; }
+
+.feature__content {
+  width: 100%;
+  padding-left: 3em; }
+
+.feature__title {
+  text-align: center;
+  margin-bottom: .5em;
+  font-size: 2.4rem; }
+
+.feature__list:nth-of-type(2n) .feature__image {
+  order: 2; }
+
+.feature__list:nth-of-type(2n) .feature__content {
+  padding-left: 0;
+  padding-right: 3em; }
+
 .single-post-pager {
   list-style: none;
   display: flex;
