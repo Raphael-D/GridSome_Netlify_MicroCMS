@@ -47,6 +47,7 @@ Please tell me what you notice.
 ## About GraphQL with MicroCMS posts.
 
 ### How to display the MicroCMS post data by GraphQL?
+**Prerequisite: Pass MicroCMS submission data to GraphQL with gridsome.server.js.**
 The actual example is shown below.
 
 #### Case: List post type
