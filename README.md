@@ -111,7 +111,7 @@ Note that if the input field created on the MicroCMS side is a multiple content 
 ### How to display the acquired data in Vue.
 
 #### Case: List post type
-    <table v-pre>
+    <table>
         <tr v-for="item in $page.allWorks.edges" :key="item.node.permalink" class="works-post__list">
             <td>{{ item.node.id }}</td>
             <td>{{ item.node.title }}</td>
