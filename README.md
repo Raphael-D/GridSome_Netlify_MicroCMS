@@ -44,6 +44,88 @@ Please tell me what you notice.
 > Then, they must be watch always at after completed function.
 > Separeted sequence each behavior for it but commands is one, "npm run dev".
 
+## About GraphQL with MicroCMS posts.
+
+### How to display the MicroCMS post data by GraphQL?
+The actual example is shown below.
+
+#### Case: List post type
+    <page-query>
+        query {
+        allWorks {
+            edges {
+                node {
+                    id
+                    title
+                    slug
+                    date (format: "YYYY年MM月DD日 HH:mm:ss")
+                    content
+                    path
+                }
+            }
+        }
+        }
+    <page-query>
+If the endpoint name is “works”, it will be “allWorks”.
+
+#### Case: Object post type
+    <page-query>
+        query {
+            allHome {
+                edges {
+                    node {
+                        id
+                        title
+                        date
+                        introduce {
+                            intro_title
+                            intro_content
+                            intro_image {
+                                url
+                            }
+                        }
+                        hero {
+                            url
+                        }
+                        carousel {
+                            id
+                            carousel {
+                                url
+                            }
+                        }
+                        feature {
+                            feature_title
+                            feature_image {
+                                url
+                            }
+                            feature_content
+                        }
+                    }
+                }
+            }
+        }
+    </page-query>
+If the endpoint name is “home”, it will be “allHomes”.
+Note that if the input field created on the MicroCMS side is a multiple content reference type, it will be an array when called.
+
+### How to display the acquired data in Vue.
+
+#### Case: List post type
+    <table v-pre>
+        <tr v-for="item in $page.allWorks.edges" :key="item.node.permalink" class="works-post__list">
+            <td>{{ item.node.id }}</td>
+            <td>{{ item.node.title }}</td>
+            <td>{{ item.node.slug }}</td>
+            <td>{{ item.node.date }}</td>
+            <td v-html="item.node.content"></td>
+            <td><g-link :to="item.node.path">{{ item.node.path }}</g-link></td>
+        </tr>
+    </table>
+
+#### Case: Object post type
+`{{ $page.allHome.edges[0].node.title }}`
+
+
 ## Looking for a way?
 
 ### How to import from the MicroCMS post data to GraphQL?
@@ -55,3 +137,4 @@ Please tell me what you notice.
 ### Other question or IMO?
 > Here: <a href="mailto:support@codehack.dev">support@codehack.dev</a>
 Please tell me what you notice. GOODEV XD
+
