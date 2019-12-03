@@ -293,3 +293,6 @@ a {
   a:hover {
     opacity: .8; }
 
+button:focus {
+  outline: 0; }
+
