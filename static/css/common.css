@@ -6,8 +6,12 @@
 * Description: Fack me!(female only)
 ==========================*/
 /*==========================
-Utility
+Base & Utility
 ==========================*/
+body {
+  background-color: transparent;
+  color: #333; }
+
 [data-prefix="fab"],
 [data-prefix="far"],
 [data-prefix="fas"] {
@@ -59,14 +63,18 @@ Component
   padding-top: 1em;
   padding-bottom: 1em;
   display: flex;
-  flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  @media screen and (min-width: 768px) {
+    .header__wrapper {
+      flex-wrap: nowrap; } }
 
 .header__home-link {
   display: flex;
   flex-wrap: nowrap;
-  align-items: center; }
+  align-items: center;
+  width: calc(100% - 3em); }
 
 .header__site-title {
   width: 12em;
@@ -75,16 +83,29 @@ Component
   padding: 0 1em; }
 
 .header__logo {
-  width: 240px; }
+  width: 50%; }
+  @media screen and (min-width: 768px) {
+    .header__logo {
+      width: 240px; } }
+
+.header__toggle-btn {
+  display: block;
+  width: 2em;
+  height: 2em;
+  background-color: #0d2538; }
 
 .header__nav {
-  text-align: right;
-  display: flex;
-  flex-wrap: nowrap;
-  font-weight: bold; }
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 1em;
+  margin-top: 1em;
+  position: relative;
+  border-top: 1px solid #0d2538; }
   .header__nav-link {
     display: block;
-    margin-left: 1em; }
+    margin-bottom: 1em;
+    padding-top: 1em; }
 
 /*==========================
 Modules

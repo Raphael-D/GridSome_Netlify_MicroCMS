@@ -1,13 +1,14 @@
 <template>
   <div class="layout">
     <header class="l-header header">
-      <div class="l-wrapper header__wrapper">
+      <div class="header__wrapper">
         <g-link to="/" class="header__home-link">
           <g-image class="logo header__logo" alt="Example image" src="~/assets/images/site-logo.png" />
           <span class="header__site-title">
             {{ $static.metadata.siteName }}
           </span>
         </g-link>
+        <button class="header__toggle-btn"></button>
         <nav class="nav header__nav">
           <g-link class="header__nav-link" to="/">Home</g-link>
           <g-link class="header__nav-link" to="/about/">About</g-link>

@@ -7,8 +7,13 @@
 * Description: Fack me!(female only)
 ==========================*/
 /*==========================
-Utility
+Base & Utility
 ==========================*/
+body {
+  @include bgColor(background);
+  @include fontColor(content)
+}
+
 [data-prefix="fab"],
 [data-prefix="far"],
 [data-prefix="fas"] {
@@ -48,19 +53,28 @@ Layout
 Component
 ==========================*/
 .header {
+  
   &__wrapper {
     padding-top: 1em;
     padding-bottom: 1em;
     display: flex;
-    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    @include mq() {
+      
+      flex-wrap: nowrap;
+    }
+    
   }
   
   &__home-link {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
+    
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      width: calc(100% - 3em)
+    
   }
   &__site-title {
     width: 12em;
@@ -70,19 +84,40 @@ Component
     
   }
   &__logo {
-    width: 240px;
+    width: 50%;
+    @include mq() {
+      width: 240px;
+    }
     
   }
+  &__toggle-btn {
+    // position: absolute;
+    // top: 1em;
+    // right: 1em;
+    display: block;
+    width: 2em;
+    height: 2em;
+    background-color: #0d2538;
+  }
   &__nav {
-    text-align: right;
-    display: flex;
-    flex-wrap: nowrap;
+    // text-align: right;
+    // display: flex;
+    // flex-wrap: nowrap;
+    width: 100%;
     font-weight: bold;
+    text-align: center;
+    padding-top: 1em;
+    margin-top: 1em;
+    position: relative;
+    // border-top: 1px solid #0d2538;
+    @include setBorder(1px, solid, base, top);
     &-link {
       display: block;
-      margin-left: 1em;
+      margin-bottom: 1em;
+      padding-top: 1em;
     }
   }
+  
   
   
 }
