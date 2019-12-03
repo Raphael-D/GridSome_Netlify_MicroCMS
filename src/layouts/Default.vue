@@ -8,12 +8,14 @@
             {{ $static.metadata.siteName }}
           </span>
         </g-link>
-        <button class="header__toggle-btn"></button>
-        <nav class="nav header__nav">
+        <button class="header__toggle-btn" @click="showMenu" :class="{'is_active': toggle_condition}"></button>
+        <transition name="nav" appear>
+        <nav class="nav header__nav" v-show="nav_condition">
           <g-link class="header__nav-link" to="/">Home</g-link>
           <g-link class="header__nav-link" to="/about/">About</g-link>
           <g-link class="header__nav-link" to="/works/">Works</g-link>
         </nav>
+        </transition>
       </div>
     </header>
     <slot/>
@@ -28,17 +30,65 @@ query {
 }
 </static-query>
 <script>
+
 export default {
   name: 'default',
+  data() {
+    return {
+      toggle_condition: false,
+      nav_condition: false
+    }
+  },
   metaInfo: {
     link: [
       { rel: 'stylesheet', href: '/css/ress.css' },
       { rel: 'stylesheet', href: '/css/common.css' }
     ]
+  },
+  methods: {
+    showMenu() {
+      
+        this.toggle_condition = !this.toggle_condition;
+        this.nav_condition = !this.nav_condition; 
+      
+    }
   }
 }
 </script>
-<style>
+<style lang="scss">
+.header__toggle-btn {
+  &::before,
+  &::after {
+    transition: .2s;
+  }
+}
+.header__toggle-btn.is_active {
+  box-shadow: -1px -1px 1px #ccc;
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+    top: 50%;
+  }
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+    top: 50%;
+  }
+}
+.nav-enter,
+.nav-leave-to {
+  opacity: 0;
+  
+}
+.nav-enter-active,
+.nav-leave-active {
+  transition: .2s;
+  
+}
+.nav-enter-to,
+.nav-leave {
+  opacity: 1;
+  
+}
+
 
 
 </style>

@@ -92,12 +92,13 @@ Component
   display: block;
   width: 2em;
   height: 2em;
-  background-color: #0d2538;
-  position: relative; }
+  background-color: #fff;
+  position: relative;
+  box-shadow: 1px 1px 1px #ccc; }
   .header__toggle-btn::before, .header__toggle-btn::after {
     content: '';
     display: block;
-    background-color: #00a672;
+    background-color: #c00;
     width: 1em;
     height: 1px; }
   .header__toggle-btn::before {
