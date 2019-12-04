@@ -2,6 +2,7 @@
 .cache
 .DS_Store
 *._
+._*
 src/.temp
 node_modules
 dist

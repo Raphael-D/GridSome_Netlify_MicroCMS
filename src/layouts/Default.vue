@@ -47,12 +47,22 @@ export default {
   },
   methods: {
     showMenu() {
-      
-        this.toggle_condition = !this.toggle_condition;
-        this.nav_condition = !this.nav_condition; 
-      
-    }
-  }
+          let self = this;
+          this.$mobileDetect({
+            breakpoint: 768,
+            mobile: function() {
+              self.toggle_condition = !self.toggle_condition;
+              self.nav_condition = !self.nav_condition;
+            },
+            pc: function() {
+              return false;
+            }
+        })
+    },
+    
+    
+  },
+  
 }
 </script>
 <style lang="scss">
