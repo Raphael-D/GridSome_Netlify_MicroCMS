@@ -4,7 +4,7 @@ const mobileDetect = {
         Vue.prototype.$mobileDetect = function(_ref) {
             // return console.log(this.$myObjectProperty);
             const self = this;
-            const breakpoint = _ref.breakpoint;
+            const breakpoint = _ref.breakpoint === undefined ? 768 : _ref.breakpoint;
             const mobile = _ref.mobile;
             const pc = _ref.pc;
             const browseInit = () => {
@@ -12,7 +12,7 @@ const mobileDetect = {
                 return self.$forceUpdate();
             }
             const getWindowWidth = () => {
-                return window.innerWidth;
+                return document.documentElement.clientWidth;
             }
             if(getWindowWidth() <= breakpoint) {
                 mobile();

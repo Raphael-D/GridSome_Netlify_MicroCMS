@@ -23,7 +23,9 @@ body {
   max-width: 100%;
   width: inherit;
 }
-
+.sabu-taitoru {
+  text-align: center;
+}
 /*==========================
 Layout
 ==========================*/
@@ -53,7 +55,15 @@ Layout
 Component
 ==========================*/
 .header {
-  
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  @include mq() {
+    
+  }
   &__wrapper {
     padding-top: 1em;
     padding-bottom: 1em;
@@ -100,6 +110,9 @@ Component
     background-color: #fff;
     position: relative;
     box-shadow: 1px 1px 1px #ccc;
+    @include mq() {
+      display: none;
+    }
     &::before,
     &::after {
       content: '';
@@ -115,24 +128,38 @@ Component
       @include centeRingX(absolute, 1.2em);
     }
     
+    
   }
   &__nav {
-    // text-align: right;
-    // display: flex;
-    // flex-wrap: nowrap;
     width: 100%;
     font-weight: bold;
     text-align: center;
     padding-top: 1em;
     margin-top: 1em;
     position: relative;
-    // border-top: 1px solid #0d2538;
     @include setBorder(1px, solid, base, top);
+    @include mq() {
+      display: flex;
+      flex-wrap: nowrap;
+      text-align: right;
+      border-top-width: 0;
+      justify-content: flex-end;
+      margin-top: 0;
+      padding-top: 0;
+    }
     &-link {
       display: block;
       margin-bottom: 1em;
       padding-top: 1em;
+      @include mq() {
+        margin-right: 1em;
+        margin-left: 1em;
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
     }
+    
   }
   
   
@@ -160,10 +187,17 @@ Modules
   text-align: center;
   margin-bottom: .5em;
   color: #0d2538;
+  @include mq() {
+    margin-bottom: 1em;
+  }
 }
 
 //////////////// Index.vue
 .hero {
+  padding-top: 68px;
+  @include mq() {
+    padding-top: 82px;
+  }
   &__heading {
     @include bgColor(base);
     color: #fff;
@@ -187,6 +221,8 @@ Modules
   font-size: 1.2rem;
   @include mq() {
     flex-wrap: nowrap;
+    font-size: 1.6rem;
+    font-weight: bold;
   }
   a {
     
@@ -196,8 +232,7 @@ Modules
     margin-bottom: .5em;
     @include mq() {
       margin-bottom: 0;
-      margin-right: 1em;
-      padding-left: 1em;
+      text-align: center;
     }
     &:not(:first-of-type) {
       @include mq() {

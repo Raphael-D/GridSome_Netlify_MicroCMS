@@ -104,6 +104,7 @@ const confSass = {
   optimization: {
     minimizer: [new OptimizeCSSAssetsPlugin({})],
   },
+  
 }
 module.exports = [confSass];
 // module.exports = [confVueBabel, confSass];
