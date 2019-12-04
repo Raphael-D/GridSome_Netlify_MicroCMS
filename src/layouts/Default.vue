@@ -47,25 +47,61 @@ export default {
   },
   methods: {
     showMenu() {
-          let self = this;
-          this.$mobileDetect({
-            breakpoint: 768,
-            mobile: function() {
-              self.toggle_condition = !self.toggle_condition;
-              self.nav_condition = !self.nav_condition;
-            },
-            pc: function() {
-              return false;
-            }
-        })
+      let self = this;
+      this.$mobileDetect({
+        breakpoint: 768,
+        mobile: function() {
+          self.toggle_condition = !self.toggle_condition;
+          self.nav_condition = !self.nav_condition;
+        },
+        pc: function() {
+          return false;
+        }
+      })
     },
-    
+    initMobileMenu() {
+      if(this.nav_condition === true) {
+        this.toggle_condition = false;
+        this.nav_condition = false;
+        return this.toggle_condition, this.nav_condition;
+      }
+    },
+    initPcMenu() {
+      if(this.nav_condition === false) {
+        this.toggle_condition = true;
+        this.nav_condition = true;
+        return this.toggle_condition, this.nav_condition;
+      }
+    }
+  },
+  computed: {
     
   },
-  
+  mounted() {
+    let self = this;
+    self.$mobileDetect({
+      breakpoint: 768,
+      mobile: function() {
+        self.initMobileMenu();
+      },
+      pc: function() {
+        self.initPcMenu();
+      }
+    })
+    window.addEventListener('resize', function() {
+      self.$mobileDetect({
+        mobile: function() {
+          self.initMobileMenu();
+        },
+        pc: function() {
+          self.initPcMenu();
+        }
+      })
+    })
+  }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .header__toggle-btn {
   &::before,
   &::after {
@@ -86,17 +122,14 @@ export default {
 .nav-enter,
 .nav-leave-to {
   opacity: 0;
-  
 }
 .nav-enter-active,
 .nav-leave-active {
   transition: .2s;
-  
 }
 .nav-enter-to,
 .nav-leave {
   opacity: 1;
-  
 }
 
 

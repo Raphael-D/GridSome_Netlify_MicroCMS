@@ -13,13 +13,14 @@
     <nav class="l-wrapper gridsome-links">
           <a href="https://gridsome.org/docs/" target="_blank" rel="noopener"><font-awesome-icon :icon="['fab', 'readme']"/>Gridsome Docs</a>
           <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener"><font-awesome-icon :icon="['fab', 'github']"/>Gridsome GitHub</a>
-          <a href="https://github.com/Raphael-D/GridSome_Netlify_MicroCMS" target="_blank"><font-awesome-icon :icon="['fab', 'github']"/>開発中のレポジトリはこちら</a>
+          <a href="https://github.com/Raphael-D/GridSome_Netlify_MicroCMS" target="_blank"><font-awesome-icon :icon="['fab', 'github']"/>開発中のリポジトリはこちら</a>
     </nav>
     <section class="l-section">
       <div class="l-wrapper">
         <!-- Learn how to use images here: https://gridsome.org/docs/images -->
         <section class="l-section">
         <h2 class="section-title">Why choose this JAMStack?</h2>
+        <h3 class="sabu-taitoru">"Konsooru.log()"<br />そんなあなたへ</h3>
         <ul class="feature">
           <li class="feature__list" v-for="item in $page.allHome.edges[0].node.feature" :key="item.id">
             
