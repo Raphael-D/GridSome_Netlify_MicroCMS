@@ -8,6 +8,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import mobileDetect from './mobiledetect';
 
 config.autoAddCss = false;
 library.add(fas, fab, far)
@@ -21,6 +22,7 @@ export default function (Vue, { router, head, isClient }) {
   //   type: 'text/css',
   //   href: '/assets/css/reset.css'
   // })
+  Vue.use(mobileDetect);
   Vue.component('Layout', DefaultLayout)
   Vue.component('font-awesome-icon', FontAwesomeIcon)
 }
