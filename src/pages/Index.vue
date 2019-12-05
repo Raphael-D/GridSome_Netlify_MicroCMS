@@ -20,7 +20,7 @@
         <!-- Learn how to use images here: https://gridsome.org/docs/images -->
         <section class="l-section">
         <h2 class="section-title">Why choose this JAMStack?</h2>
-        <h3 class="sabu-taitoru">"Konsooru.log()"<br />そんなあなたへ</h3>
+        <h3 class="sabu-taitoru">"Konsooru.rogu()"<br />そんなあなたへ</h3>
         <ul class="feature">
           <li class="feature__list" v-for="item in $page.allHome.edges[0].node.feature" :key="item.id">
             

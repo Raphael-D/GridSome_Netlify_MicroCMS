@@ -1,44 +1,7 @@
 <template>
   <Layout>
     <div class="l-wrapper">
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!!!!</h1>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste
-      tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-    <br />
-    <br />
-    <table class="blog-list">
-      <tr>
-        <th>id</th>
-        <th>createdAt</th>
-        <th>updatedAt</th>
-        <th>permalink</th>
-        <th>page_title</th>
-        <th>hero_image</th>
-        <th>content</th>
-      </tr>
-      <tr v-for="item in blog" :key="item.id">
-        <td>{{ item.id }}</td>
-        <td>{{ item.createdAt }}</td>
-        <td>{{ item.updatedAt }}</td>
-        <td>{{ item.permalink }}</td>
-        <td>{{ item.page_title }}</td>
-        <td>{{ item.hero_image }}</td>
-        <td>{{ item.content }}</td>
-      </tr>
-    </table>
-    <br />
-    <br />
+    
     <article v-if="singlePostView">
       <h2>個別ページ</h2>
       ID：{{ singlePost.id }}<br />
@@ -49,13 +12,7 @@
       画像：{{ singlePost.hero_image }}<br />
       コンテンツ：<div v-html="singlePost.content"></div><br />
     </article>
-    <ul>
-      <li v-for="item in blog" :key="item.id">
-      <button @click="movePost(item.permalink)">
-        {{ item.page_title }}:{{ item.permalink }}
-      </button>
-      </li>
-    </ul>
+    
     <nav class="local-link">
         <a @click="movePost(item.permalink)" v-for="item in blog" :key="item.id" class="local-link__item" :href="'/works/' + item.permalink">{{ item.page_title }}</a>
       </nav>
