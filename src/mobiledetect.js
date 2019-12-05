@@ -1,6 +1,5 @@
 const mobileDetect = {
     install(Vue, options) {
-        // Vue.prototype.$breakpoint = 'hogehoge';
         Vue.prototype.$mobileDetect = function(_ref) {
             // return console.log(this.$myObjectProperty);
             const self = this;
