@@ -2,17 +2,6 @@
   <Layout>
     <div class="l-wrapper">
     
-    <article v-if="singlePostView">
-      <h2>個別ページ</h2>
-      ID：{{ singlePost.id }}<br />
-      投稿日：{{ singlePost.createdAt }}<br />
-      更新日：{{ singlePost.updatedAt }}<br />
-      パーマリンク：{{ singlePost.permalink }}<br />
-      タイトル：{{ singlePost.page_title }}<br />
-      画像：{{ singlePost.hero_image }}<br />
-      コンテンツ：<div v-html="singlePost.content"></div><br />
-    </article>
-    
     <nav class="local-link">
         <a @click="movePost(item.permalink)" v-for="item in blog" :key="item.id" class="local-link__item" :href="'/works/' + item.permalink">{{ item.page_title }}</a>
       </nav>

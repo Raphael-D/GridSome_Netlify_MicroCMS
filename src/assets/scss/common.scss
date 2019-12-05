@@ -61,18 +61,16 @@ Component
   left: 0;
   background-color: #fff;
   width: 100%;
-  @include mq() {
-    
-  }
+}
+.header,
+.footer {
   &__wrapper {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1em;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     @include mq() {
-      
       flex-wrap: nowrap;
     }
     
@@ -127,8 +125,6 @@ Component
     &::after {
       @include centeRingX(absolute, 1.2em);
     }
-    
-    
   }
   &__nav {
     width: 100%;
@@ -166,15 +162,14 @@ Component
   
 }
 .footer {
-  &__logo {
-
+  @include bgColor(base);
+  color: #fff;
+  &__contact {
+    @include bgColor(accent2);
+    padding: .5em 1em;
+    text-align: right; 
   }
-  &__nav {
-
-  }
-  &__list {
-
-  }
+  
 }
 
 /*==========================

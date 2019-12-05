@@ -14,6 +14,7 @@
           <a href="https://gridsome.org/docs/" target="_blank" rel="noopener"><font-awesome-icon :icon="['fab', 'readme']"/>Gridsome Docs</a>
           <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener"><font-awesome-icon :icon="['fab', 'github']"/>Gridsome GitHub</a>
           <a href="https://github.com/Raphael-D/GridSome_Netlify_MicroCMS" target="_blank"><font-awesome-icon :icon="['fab', 'github']"/>開発中のリポジトリはこちら</a>
+          <g-link to="/Vuefontawesomecheetsheet/">Vue FontAwesome CheetSheet</g-link>
     </nav>
     <section class="l-section">
       <div class="l-wrapper">

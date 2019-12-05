@@ -4,6 +4,7 @@
     <Layout>
         <router-view />
     </Layout>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -18,10 +19,6 @@ query {
 
 <script>
 export default {
-  // components: {
-  //   Layout,
-  //   Header
-  // },
   metaInfo() {
     return {
       title: this.$static.metadata.siteName,
