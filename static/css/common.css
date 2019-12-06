@@ -207,7 +207,7 @@ Modules
     padding-bottom: .5em;
     line-height: 1.7; }
 
-.gridsome-links {
+.info-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -217,21 +217,21 @@ Modules
   padding-bottom: .5em;
   font-size: 1.2rem; }
   @media screen and (min-width: 768px) {
-    .gridsome-links {
+    .info-links {
       flex-wrap: nowrap;
       font-size: 1.6rem;
       font-weight: bold; } }
-  .gridsome-links a {
+  .info-links a {
     display: block;
     color: #3b7aad;
     width: 100%;
     margin-bottom: .5em; }
     @media screen and (min-width: 768px) {
-      .gridsome-links a {
+      .info-links a {
         margin-bottom: 0;
         text-align: center; } }
     @media screen and (min-width: 768px) {
-      .gridsome-links a:not(:first-of-type) {
+      .info-links a:not(:first-of-type) {
         border-left: 1px solid #0d2538; } }
 
 .feature__list {

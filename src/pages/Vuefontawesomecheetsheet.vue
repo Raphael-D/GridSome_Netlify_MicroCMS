@@ -1,31 +1,38 @@
 <template>
     <!-- <Layout> -->
-        <div class="l-wrapper">
-            <h1 v-pre class="fwtest">{{ VueFontAwesome }}</h1>
-        <table class="fw-table">
-            <tr>
-                <th colspan="5">Vue Font Awesome Icon Cheet Sheet</th>
-            </tr>
-            <tr>
-                <th colspan="5">
-                    Type of Brand
-                </th>
-            </tr>
-            <tr>
-                <th>Icon</th>
-                <th>Name</th>
-                <th>Prefix</th>
-                <th>Icon Name</th>
-                <th>Code</th>
-            </tr>
-            <tr v-for="(item, key) in VueFontAwesome" :key="key">
-                <td><font-awesome-icon :icon="[item.prefix, item.iconName]" /></td>
-                <td>{{ item.name }}</td>
-                <td>{{ item.prefix }}</td>
-                <td>{{ item.iconName }}</td>
-                <td>&lt;font-awesome-icon :icon=&quot;[{{ item.prefix }}, {{ item.iconName}}]&quot; /&gt;</td>
-            </tr>
-        </table>
+        <div>
+            <div class="hero">
+                <h1 class="hero__heading">Vue fontAwesome cheet sheet<br />INDEX</h1>
+            </div>
+            <nav class="l-wrapper info-links">
+                <a href="#fas">Type of Solid</a>
+                <a href="#fab">Type of Brand</a>
+                <a href="#far">Type of Regular</a>
+            </nav>
+            <!-- Font Awesome Solid -->
+            <section id="fas" class="l-section">
+                <div class="l-wrapper">
+                    <h2>Type of Solid</h2>
+                    <table class="fa-table">
+                        <tr class="fa-table__row fa-table__row--heading">
+                            <th>Icon</th>
+                            <th>Name</th>
+                            <th>Prefix</th>
+                            <th>Icon Name</th>
+                            <th>Code</th>
+                        </tr>
+                        <tr class="fa-table__row fa-table__row--detail" v-for="(item, key) in getSolidFontAwesome" :key="key">
+                            <td class="fa-table__cell fa-table__cell--icon"><font-awesome-icon :icon="[item.prefix, item.iconName]" /></td>
+                            <td class="fa-table__cell fa-table__cell--name">{{ item.name }}</td>
+                            <td class="fa-table__cell fa-table__cell--prefix">{{ item.prefix }}</td>
+                            <td class="fa-table__cell fa-table__cell--iconName">{{ item.iconName }}</td>
+                            <td class="fa-table__cell fa-table__cell--code">&lt;font-awesome-icon :icon=&quot;[{{ item.prefix }}, {{ item.iconName}}]&quot; /&gt;</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            
+            
         </div>
     <!-- </layout> -->
 </template>
@@ -56,53 +63,50 @@ export default {
             far: []
         }
     },
-    computed: {
-        VueFontAwesome() {
-            let keys = Object.keys(this.raw.fas)
+    methods: {
+        extractFa(args) {
+            let keys = Object.keys(args)
             let name = [];
             let prefix = [];
             let iconName = [];
+            let values = {
+                name: [],
+                prefix: [],
+                iconName: []
+            }
             for(let i = 0; i < keys.length; i++) {
-                if(Boolean(this.raw.fas[keys[i]].prefix) && Boolean(this.raw.fas[keys[i]].iconName)) {
-                    // if(keys[i]) {
-
-                    
-                    // this.fas[i] = new Object();
-                    // this.fas[i].name = keys[i];
-                    // this.fas[i].prefix = this.raw.fas[keys[i]].prefix;
-                    // this.fas[i].iconName = this.raw.fas[keys[i]].iconName;
-
-
+                if(Boolean(args[keys[i]].prefix) && Boolean(args[keys[i]].iconName)) {
                     name.push(keys[i]);
-                    prefix.push(this.raw.fas[keys[i]].prefix);
-                    iconName.push(this.raw.fas[keys[i]].iconName);
-
-                    // console.log(this.fas[i].name)
-                    // console.log(keys[i])
-                    // console.log(i, Boolean(this.raw.fas[keys[i]].iconName), this.raw.fas[keys[i]].iconName)
-                    // console.log(this.fas[i].prefix)
-                    // }
+                    prefix.push(args[keys[i]].prefix);
+                    iconName.push(args[keys[i]].iconName);
                 }
             }
-            for(let i = 0; i < name.length; i++) {
-                this.fas[i] = new Object();
-                this.fas[i].name = name[i];
-                this.fas[i].prefix = prefix[i];
-                this.fas[i].iconName = iconName[i];
-                console.log(fas[i])
-            }
-            // console.log(Object.keys(this.raw.fas).length);
-            // console.log(keys.length)
-            // console.log(this.fas.length)
-            return this.fas;
+            values.name = name;
+            values.prefix = prefix;
+            values.iconName = iconName;
+            return values;
         },
-        RestartVueFontAwesome() {
-            if(this.fas.name === null) this.VueFontAwesome();
+        callEachFa(args, target) {
+            let self = this.extractFa(args);
+            for(let i = 0; i < self.name.length; i++) {
+                target[i] = new Object();
+                target[i].name = self.name[i];
+                target[i].prefix = self.prefix[i];
+                target[i].iconName = self.iconName[i];
+            }
+            return target;
         }
     },
-    mounted() {
-        // this.VueFontAwesome();
-        // console.log(this.raw.fas.faAd)
+    computed: {
+        getSolidFontAwesome() {
+            return this.callEachFa(this.raw.fas, this.fas);
+        },
+        getBrandFontAwesome() {
+            return this.callEachFa(this.raw.fab, this.fab);
+        },
+        getRegularFontAwesome() {
+            return this.callEachFa(this.raw.far, this.far);
+        }
     }
     
 }
