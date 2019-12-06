@@ -27,6 +27,9 @@
     &__cell--icon {
         text-align: center;
         max-width: 3em;
+        & svg {
+            margin: 0;
+        }
     }
     &__cell--prefix {
         text-align: center;
