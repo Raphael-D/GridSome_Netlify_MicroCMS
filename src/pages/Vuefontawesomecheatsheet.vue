@@ -2,7 +2,7 @@
     <!-- <Layout> -->
         <div>
             <div class="hero">
-                <h1 class="hero__heading">Vue font Awesome cheet sheet<br />INDEX</h1>
+                <h1 class="hero__heading">Vue font Awesome cheat sheet<br />INDEX</h1>
             </div>
             <nav class="l-wrapper info-links">
                 <button class="info-links__item" @click='selectFa("fas")'>Solid</button>
@@ -27,7 +27,7 @@
                             <td class="fa-table__cell fa-table__cell--name">{{ item.name }}</td>
                             <td class="fa-table__cell fa-table__cell--prefix">{{ item.prefix }}</td>
                             <td class="fa-table__cell fa-table__cell--iconName">{{ item.iconName }}</td>
-                            <td class="fa-table__cell fa-table__cell--code">&lt;font-awesome-icon :icon=&quot;[{{ item.prefix }}, {{ item.iconName}}]&quot; /&gt;</td>
+                            <td class="fa-table__cell fa-table__cell--code">&lt;font-awesome-icon :icon=&quot;['{{ item.prefix }}', '{{ item.iconName}}']&quot; /&gt;</td>
                         </tr>
                     </table>
                 </div>
@@ -48,7 +48,7 @@
                             <td class="fa-table__cell fa-table__cell--name">{{ item.name }}</td>
                             <td class="fa-table__cell fa-table__cell--prefix">{{ item.prefix }}</td>
                             <td class="fa-table__cell fa-table__cell--iconName">{{ item.iconName }}</td>
-                            <td class="fa-table__cell fa-table__cell--code">&lt;font-awesome-icon :icon=&quot;[{{ item.prefix }}, {{ item.iconName}}]&quot; /&gt;</td>
+                            <td class="fa-table__cell fa-table__cell--code">&lt;font-awesome-icon :icon=&quot;['{{ item.prefix }}', '{{ item.iconName}}']&quot; /&gt;</td>
                         </tr>
                     </table>
                 </div>
@@ -69,7 +69,7 @@
                             <td class="fa-table__cell fa-table__cell--name">{{ item.name }}</td>
                             <td class="fa-table__cell fa-table__cell--prefix">{{ item.prefix }}</td>
                             <td class="fa-table__cell fa-table__cell--iconName">{{ item.iconName }}</td>
-                            <td class="fa-table__cell fa-table__cell--code">&lt;font-awesome-icon :icon=&quot;[{{ item.prefix }}, {{ item.iconName}}]&quot; /&gt;</td>
+                            <td class="fa-table__cell fa-table__cell--code">&lt;font-awesome-icon :icon=&quot;['{{ item.prefix }}', '{{ item.iconName}}']&quot; /&gt;</td>
                         </tr>
                     </table>
                 </div>
@@ -85,7 +85,8 @@ const fab = require('@fortawesome/free-brands-svg-icons')
 const far = require('@fortawesome/free-regular-svg-icons')
 export default {
     metaInfo: {
-        title: 'Vue Font Awesone Icon Cheet Sheet | Vue FontAwesome チートシート',
+        title: 'Vue Font Awesone Icon Cheat Sheet | Vue FontAwesome チートシート',
+        description: 'This page is Vue.js Font Awesome Cheat Sheet. If will that mistake, Sorry. Now Developing. Please tell me mistake part.',
         link: [
             { rel: 'stylesheet', href: '/css/style.css' },
         ]

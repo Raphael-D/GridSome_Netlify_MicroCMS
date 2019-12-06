@@ -14,7 +14,7 @@
           <g-link class="header__nav-link" to="/">Home</g-link>
           <g-link class="header__nav-link" to="/about/">About</g-link>
           <g-link class="header__nav-link" to="/works/">Works</g-link>
-          <g-link class="header__nav-link" to="/Vuefontawesomecheetsheet/"><font-awesome-icon :icon="['fab', 'github']" />CheetSheet</g-link>
+          <g-link class="header__nav-link" to="/Vuefontawesomecheatsheet/"><font-awesome-icon :icon="['fab', 'font-awesome-flag']" />Font Awesome Cheat Sheet</g-link>
         </nav>
         </transition>
     </div>
