@@ -221,17 +221,17 @@ Modules
       flex-wrap: nowrap;
       font-size: 1.6rem;
       font-weight: bold; } }
-  .info-links a {
+  .info-links__item {
     display: block;
     color: #3b7aad;
     width: 100%;
     margin-bottom: .5em; }
     @media screen and (min-width: 768px) {
-      .info-links a {
+      .info-links__item {
         margin-bottom: 0;
         text-align: center; } }
     @media screen and (min-width: 768px) {
-      .info-links a:not(:first-of-type) {
+      .info-links__item:not(:first-of-type) {
         border-left: 1px solid #0d2538; } }
 
 .feature__list {

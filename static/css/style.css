@@ -23,6 +23,8 @@
   .fa-table__cell--icon {
     text-align: center;
     max-width: 3em; }
+    .fa-table__cell--icon svg {
+      margin: 0; }
   .fa-table__cell--prefix {
     text-align: center; }
   .fa-table__cell--code {

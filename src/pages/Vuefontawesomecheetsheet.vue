@@ -2,15 +2,16 @@
     <!-- <Layout> -->
         <div>
             <div class="hero">
-                <h1 class="hero__heading">Vue fontAwesome cheet sheet<br />INDEX</h1>
+                <h1 class="hero__heading">Vue font Awesome cheet sheet<br />INDEX</h1>
             </div>
             <nav class="l-wrapper info-links">
-                <a href="#fas">Type of Solid</a>
-                <a href="#fab">Type of Brand</a>
-                <a href="#far">Type of Regular</a>
+                <button class="info-links__item" @click='selectFa("fas")'>Solid</button>
+                <button class="info-links__item" @click='selectFa("fab")'>Brand</button>
+                <button class="info-links__item" @click='selectFa("far")'>Regular</button>
+                <button class="info-links__item" @click='selectFa("reset")'>Reset</button>
             </nav>
             <!-- Font Awesome Solid -->
-            <section id="fas" class="l-section">
+            <section v-if="conditions.fas" id="fas" class="l-section">
                 <div class="l-wrapper">
                     <h2>Type of Solid</h2>
                     <table class="fa-table">
@@ -22,6 +23,48 @@
                             <th>Code</th>
                         </tr>
                         <tr class="fa-table__row fa-table__row--detail" v-for="(item, key) in getSolidFontAwesome" :key="key">
+                            <td class="fa-table__cell fa-table__cell--icon"><font-awesome-icon :icon="[item.prefix, item.iconName]" /></td>
+                            <td class="fa-table__cell fa-table__cell--name">{{ item.name }}</td>
+                            <td class="fa-table__cell fa-table__cell--prefix">{{ item.prefix }}</td>
+                            <td class="fa-table__cell fa-table__cell--iconName">{{ item.iconName }}</td>
+                            <td class="fa-table__cell fa-table__cell--code">&lt;font-awesome-icon :icon=&quot;[{{ item.prefix }}, {{ item.iconName}}]&quot; /&gt;</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section v-if="conditions.fab" id="fab" class="l-section">
+                <div class="l-wrapper">
+                    <h2>Type of Brand</h2>
+                    <table class="fa-table">
+                        <tr class="fa-table__row fa-table__row--heading">
+                            <th>Icon</th>
+                            <th>Name</th>
+                            <th>Prefix</th>
+                            <th>Icon Name</th>
+                            <th>Code</th>
+                        </tr>
+                        <tr class="fa-table__row fa-table__row--detail" v-for="(item, key) in getBrandFontAwesome" :key="key">
+                            <td class="fa-table__cell fa-table__cell--icon"><font-awesome-icon :icon="[item.prefix, item.iconName]" /></td>
+                            <td class="fa-table__cell fa-table__cell--name">{{ item.name }}</td>
+                            <td class="fa-table__cell fa-table__cell--prefix">{{ item.prefix }}</td>
+                            <td class="fa-table__cell fa-table__cell--iconName">{{ item.iconName }}</td>
+                            <td class="fa-table__cell fa-table__cell--code">&lt;font-awesome-icon :icon=&quot;[{{ item.prefix }}, {{ item.iconName}}]&quot; /&gt;</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section v-if="conditions.far" id="far" class="l-section">
+                <div class="l-wrapper">
+                    <h2>Type of Regular</h2>
+                    <table class="fa-table">
+                        <tr class="fa-table__row fa-table__row--heading">
+                            <th>Icon</th>
+                            <th>Name</th>
+                            <th>Prefix</th>
+                            <th>Icon Name</th>
+                            <th>Code</th>
+                        </tr>
+                        <tr class="fa-table__row fa-table__row--detail" v-for="(item, key) in getRegularFontAwesome" :key="key">
                             <td class="fa-table__cell fa-table__cell--icon"><font-awesome-icon :icon="[item.prefix, item.iconName]" /></td>
                             <td class="fa-table__cell fa-table__cell--name">{{ item.name }}</td>
                             <td class="fa-table__cell fa-table__cell--prefix">{{ item.prefix }}</td>
@@ -59,8 +102,21 @@ export default {
                 prefix: null,
                 iconName: null
             }],
-            fab: [],
-            far: []
+            fab: [{
+                name: null,
+                prefix: null,
+                iconName: null
+            }],
+            far: [{
+                name: null,
+                prefix: null,
+                iconName: null
+            }],
+            conditions: {
+                fas: true,
+                fab: true,
+                far: true
+            }
         }
     },
     methods: {
@@ -95,7 +151,7 @@ export default {
                 target[i].iconName = self.iconName[i];
             }
             return target;
-        }
+        },
     },
     computed: {
         getSolidFontAwesome() {
@@ -106,6 +162,36 @@ export default {
         },
         getRegularFontAwesome() {
             return this.callEachFa(this.raw.far, this.far);
+        },
+        selectFa() {
+            let self = this;
+            return function(args) {       
+                console.log("THIS one : " ,args)         
+                if(!args) {
+                    return
+                }
+                if(args === "fas") {
+                    self.conditions.fas = true;
+                    self.conditions.fab = false;
+                    self.conditions.far =  false;
+                }
+                if(args === "fab") {
+                    self.conditions.fas = false;
+                    self.conditions.fab = true;
+                    self.conditions.far = false;
+                }
+                if(args === "far") {
+                    self.conditions.fas = false;
+                    self.conditions.fab = false;
+                    self.conditions.far = true;
+                }
+                if(args === "reset") {
+                    self.conditions.fas = true;
+                    self.conditions.fab = true;
+                    self.conditions.far =  true;
+                }
+                return self.conditions.fas, self.conditions.fab, self.conditions.far;
+            }
         }
     }
     

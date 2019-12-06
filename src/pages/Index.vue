@@ -11,10 +11,10 @@
         <h1 class="hero__heading">{{ $page.allHome.edges[0].node.title }}</h1>
     </div>
     <nav class="l-wrapper info-links">
-          <a href="https://gridsome.org/docs/" target="_blank" rel="noopener"><font-awesome-icon :icon="['fab', 'readme']"/>Gridsome Docs</a>
-          <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener"><font-awesome-icon :icon="['fab', 'github']"/>Gridsome GitHub</a>
-          <a href="https://github.com/Raphael-D/GridSome_Netlify_MicroCMS" target="_blank"><font-awesome-icon :icon="['fab', 'github']"/>開発中のリポジトリはこちら</a>
-          <g-link to="/Vuefontawesomecheetsheet/">Vue Fontawesome</g-link>
+          <a class="info-links__item" href="https://gridsome.org/docs/" target="_blank" rel="noopener"><font-awesome-icon :icon="['fab', 'readme']"/>Gridsome Docs</a>
+          <a class="info-links__item" href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener"><font-awesome-icon :icon="['fab', 'github']"/>Gridsome GitHub</a>
+          <a class="info-links__item" href="https://github.com/Raphael-D/GridSome_Netlify_MicroCMS" target="_blank"><font-awesome-icon :icon="['fab', 'github']"/>開発中のリポジトリはこちら</a>
+          <g-link class="info-links__item" to="/Vuefontawesomecheetsheet/">Vue Fontawesome</g-link>
     </nav>
     <section class="l-section">
       <div class="l-wrapper">
