@@ -98,8 +98,8 @@ $horizontalSpace: (
 	'section': 0,
 	'wrapper': 1em,
 	'side': 1em,
-	'header': 1em,
-	'footer': 1em
+	'header': 0em,
+	'footer': 0em
 );
 // Set horizontal padding
 @mixin horizontalPadding($value: section) {

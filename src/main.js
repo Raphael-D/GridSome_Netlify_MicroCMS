@@ -3,6 +3,7 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 import Header from '~/layouts/Header.vue'
+import Footer from '~/layouts/Footer.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { config, library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -25,5 +26,6 @@ export default function (Vue, { router, head, isClient }) {
   Vue.use(mobileDetect);
   Vue.component('Layout', DefaultLayout)
   Vue.component('Header', Header)
+  Vue.component('Footer', Footer)
   Vue.component('font-awesome-icon', FontAwesomeIcon)
 }
