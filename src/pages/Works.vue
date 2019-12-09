@@ -3,8 +3,8 @@
     <div class="l-wrapper">
     
     <nav class="local-link">
-        <a @click="movePost(item.permalink)" v-for="item in blog" :key="item.id" class="local-link__item" :href="'/works/' + item.permalink">{{ item.page_title }}</a>
-      </nav>
+      <a @click="movePost(item.permalink)" v-for="item in blog" :key="item.id" class="local-link__item" :href="'/works/' + item.permalink">{{ item.page_title }}</a>
+    </nav>
 
       <div class="works-post">
         <h1 class="works-post__title">Post list from GraphQL</h1>

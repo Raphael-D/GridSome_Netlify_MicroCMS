@@ -40,7 +40,7 @@ library.add(fas, fab, far);
 import VuePageTransition from 'vue-page-transition';
 
 // Loading animation component
-import VueLoading from 'vue-loading-template';
+// import VueLoading from 'vue-loading-template';
 
 
 
@@ -57,5 +57,5 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('Header', Header)
   Vue.component('Footer', Footer)
   Vue.component('font-awesome-icon', FontAwesomeIcon)
-  Vue.use(VueLoading)
+  // Vue.use(VueLoading)
 }

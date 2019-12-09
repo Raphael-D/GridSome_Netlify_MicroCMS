@@ -21,6 +21,11 @@ query {
 
 <script>
 export default {
+  data() {
+    return {
+      isLoading: true
+    }
+  },
   metaInfo() {
     return {
       title: this.$static.metadata.siteName,
@@ -32,6 +37,17 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    checkLoadCondition() {
+      // console.log(this.$options.components);
+      // console.log(this.$options.components['vue-page-transition'].options.beforeCreate);
+      // this.$options.components['vue-page-transition']
+      // this.$options.components['vue-page-transition'].options.beforeCreate
+    }
+  },
+  mounted() {
+    this.checkLoadCondition();
   }
 }
 </script>
@@ -46,16 +62,38 @@ export default {
 :root {
   --overlay-bg: #fff!important;
 }
-// .overlay-up-leave-active {
-//   background-color: #fff!important;
+.vue-loading {
+  // display: none;
+  opacity: 0;
+  transition: .5s;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+.overlay-up-leave-acitive,
+.overlay-up-leave-to,
+.overlay-up-enter-active,
+.overlay-up-enter-to {
+  & .vue-loading {
+    display: block;
+  }
+}
+.overlay-up-leave-active .vue-loading {
+  opacity: 0;
+  // transition: .5s;
+}
+.overlay-up-leave-to .vue-loading {
+  opacity: 1;
+  //transition: .5s;
+}
+.overlay-up-enter-active .vue-loading {
+  opacity: 1;
+  // transition: .5s;
+}
+// .overlay-up-enter-to .vue-loading {
+//   opacity: 0;
 // }
-// .overlay-up-leave-to {
-//   background-color: #fff!important;
-// }
-// .overlay-up-enter-active {
-//   background-color: #fff!important;
-// }
-// .overlay-up-enter-to {
-//   background-color: #fff!important;
-// }
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <!-- <Layout> -->
+    <Layout>
         <div>
             <div class="hero">
                 <h1 class="hero__heading">Vue font Awesome cheat sheet INDEX</h1>
@@ -77,7 +77,7 @@
             
             
         </div>
-    <!-- </layout> -->
+    </layout>
 </template>
 <script>
 const fas = require('@fortawesome/free-solid-svg-icons')
