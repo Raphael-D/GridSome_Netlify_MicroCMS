@@ -138,13 +138,8 @@ export default {
       this.date = this.$page.allHome.edges[0].node.date
       this.hero.url = this.$page.allHome.edges[0].node.hero.url
       this.carousel = this.$page.allHome.edges[0].node.carousel
-      // this.carousel.carousel.url = this.$page.allHome.edges[0].node.carousel.carousel.url
       this.feature = this.$page.allHome.edges[0].node.feature
-      // this.feature.feature_image.url = this.$page.allHome.edges[0].node.feature.feature_image.url
-      // this.feature.feature_content = this.$page.allHome.edges[0].node.feature.feature_content
       this.introduce = this.$page.allHome.edges[0].node.introduce
-      // this.introduce.intro_content = this.$page.allHome.edges[0].node.introduce.intro_content
-      // this.introduce.intro_image.url = this.$page.allHome.edges[0].node.introduce.intro_image.url
     }
   },
   mounted() {
