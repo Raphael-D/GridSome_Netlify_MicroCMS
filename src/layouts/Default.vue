@@ -17,7 +17,7 @@ query {
 }
 </static-query>
 <script>
-import VueLoading from 'vue-loading-template';
+// import VueLoading from 'vue-loading-template';
 export default {
   name: 'default',
   components: {
