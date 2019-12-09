@@ -1,6 +1,8 @@
 <template>
   <div class="layout">
-    <vue-loading type="spin" color="#333" :size="{ width: '50px', height: '50px' }"></vue-loading>
+    <ClientOnly>
+      <vue-loading type="spin" color="#333" :size="{ width: '50px', height: '50px' }"></vue-loading>
+    </ClientOnly>
     <main>
       <slot/>
     </main>
@@ -18,6 +20,12 @@ query {
 
 export default {
   name: 'default',
+  components: {
+    VueLoading: () =>
+      import('vue-loading-template')
+      .then(m => m.VueLoading)
+      .catch()
+  },
   data() {
     return {
       toggle_condition: false,

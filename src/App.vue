@@ -41,7 +41,7 @@ export default {
   methods: {
     checkLoadCondition() {
       // console.log(this.$options.components);
-      console.log(this.$options.components['vue-page-transition'].options.beforeCreate);
+      // console.log(this.$options.components['vue-page-transition'].options.beforeCreate);
       // this.$options.components['vue-page-transition']
       // this.$options.components['vue-page-transition'].options.beforeCreate
     }

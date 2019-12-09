@@ -31,6 +31,9 @@ Layout
 ==========================*/
 .l-section {
   margin-bottom: 8em;
+  &:first-of-type {
+    padding-top: 3em;
+  }
 }
 .l-wrapper {
   margin: 0 auto;
@@ -212,7 +215,7 @@ Modules
   padding-top: .5em;
   padding-bottom: .5em;
   font-size: 1.2rem;
-  margin-bottom: 3em;
+  white-space: nowrap;
   @include mq() {
     flex-wrap: nowrap;
     font-size: 1.4rem;

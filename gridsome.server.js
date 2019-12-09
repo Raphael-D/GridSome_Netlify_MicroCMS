@@ -36,6 +36,7 @@ const getMicroCMSPosts = (URL, API_KEY) => {
 }
 const homePosts = getMicroCMSPosts('https://codehack.microcms.io/api/v1/home', YOUR_API_KEY);
 const worksPosts = getMicroCMSPosts('https://codehack.microcms.io/api/v1/blog', YOUR_API_KEY);
+const aboutPosts = getMicroCMSPosts('https://codehack.microcms.io/api/v1/company', YOUR_API_KEY);
 
 module.exports = function (api) {
   // Dynamic Routing
@@ -54,10 +55,7 @@ module.exports = function (api) {
   // Import the HomePost to GraphQL from MicroCMS.
   api.loadSource(async actions => {
     let post = await homePosts;
-    // post = equipIterator(post);
-    let i = 0;
     const  collection = actions.addCollection('Home');
-
       collection.addNode({
         id: post.id,
         title: post.page_title,
@@ -86,6 +84,23 @@ module.exports = function (api) {
       })
     }
   })
+
+  // Import the CompanyPost to GraphQL from MicroCMS.
+  api.loadSource(async actions => {
+    let post = await aboutPosts;
+    const  collection = actions.addCollection('About');
+
+      collection.addNode({
+        id: post.id,
+        title: post.title,
+        date: post.updatedAt,
+        greeting: post.greeting,
+        hero: post.hero,
+        about: post.about
+        
+      })
+  })
+
   
   // Add a new field with arguments
   
