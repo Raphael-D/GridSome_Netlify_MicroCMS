@@ -1,10 +1,10 @@
 <template>
   <div class="layout">
-    <transition name="fade" appear>
+    <vue-loading type="spin" color="#333" :size="{ width: '50px', height: '50px' }">
+      </vue-loading>
       <main>
         <slot/>
       </main>
-    </transition>
   </div>
 </template>
 
@@ -34,14 +34,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.fade-enter-active {
-  transition: opacity .5s;
-  transform: translateY(10%)
-}
 
-.fade-enter {
-  opacity: 0;
-  transform: translateY(0);
-}
 
 </style>

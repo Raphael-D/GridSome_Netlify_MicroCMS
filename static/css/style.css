@@ -10,7 +10,7 @@
   border-collapse: collapse;
   font-size: 1.2rem; }
   .fa-table td, .fa-table th {
-    border: 1px solid #000;
+    border: 1px solid #bbb;
     padding: .2em; }
     @media screen and (min-width: 768px) {
       .fa-table td, .fa-table th {
@@ -21,8 +21,7 @@
   .fa-table__row--detail:nth-of-type(2n) {
     background-color: #eee; }
   .fa-table__cell--icon {
-    text-align: center;
-    max-width: 3em; }
+    text-align: center; }
     .fa-table__cell--icon svg {
       margin: 0; }
   .fa-table__cell--prefix {
@@ -30,9 +29,12 @@
   .fa-table__cell--code {
     white-space: nowrap;
     max-width: 10em;
-    overflow-x: auto;
-    box-shadow: 2px 2px 1px #ccc inset; }
+    overflow-x: auto; }
     @media screen and (min-width: 768px) {
       .fa-table__cell--code {
         max-width: 20em; } }
+    .fa-table__cell--code code {
+      border: 1px solid #ddd;
+      background-color: #eee;
+      color: #c00; }
 
