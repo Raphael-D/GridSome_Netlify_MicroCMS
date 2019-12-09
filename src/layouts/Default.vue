@@ -1,5 +1,6 @@
 <template>
   <div class="layout">
+    <vue-loading type="spin" color="#333" :size="{ width: '50px', height: '50px' }"></vue-loading>
     <main>
       <slot/>
     </main>
