@@ -2,7 +2,9 @@
   <div>
     <Header></Header>
     <Layout>
+      <vue-page-transition name="overlay-up">
         <router-view />
+      </vue-page-transition>
     </Layout>
     <Footer></Footer>
   </div>

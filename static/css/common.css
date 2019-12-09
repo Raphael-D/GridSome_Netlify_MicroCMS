@@ -28,36 +28,17 @@ body {
 Layout
 ==========================*/
 .l-section {
-  margin-top: 3em;
-  margin-bottom: 3em;
-  padding-right: 0;
-  padding-left: 0; }
+  margin-bottom: 8em; }
 
 .l-wrapper {
   margin: 0 auto;
   max-width: 960px;
-  margin-top: 0;
-  margin-bottom: 0;
   padding-right: 1em;
   padding-left: 1em; }
 
 .l-side {
-  margin-top: 0;
-  margin-bottom: 0;
   padding-right: 1em;
   padding-left: 1em; }
-
-.l-header {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-right: 0em;
-  padding-left: 0em; }
-
-.l-footer {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-right: 0em;
-  padding-left: 0em; }
 
 /*==========================
 Component
@@ -215,11 +196,12 @@ Modules
   line-height: 15px;
   padding-top: .5em;
   padding-bottom: .5em;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  margin-bottom: 3em; }
   @media screen and (min-width: 768px) {
     .info-links {
       flex-wrap: nowrap;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: bold; } }
   .info-links__item {
     display: block;

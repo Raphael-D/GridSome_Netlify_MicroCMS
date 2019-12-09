@@ -13,6 +13,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import mobileDetect from './mobiledetect';
 config.autoAddCss = false;
 library.add(fas, fab, far)
+import VuePageTransition from 'vue-page-transition';
 
 
 
@@ -23,6 +24,7 @@ export default function (Vue, { router, head, isClient }) {
   //   type: 'text/css',
   //   href: '/assets/css/reset.css'
   // })
+  Vue.use(VuePageTransition);
   Vue.use(mobileDetect);
   Vue.component('Layout', DefaultLayout)
   Vue.component('Header', Header)

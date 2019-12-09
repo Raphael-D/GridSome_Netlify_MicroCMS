@@ -30,26 +30,23 @@ body {
 Layout
 ==========================*/
 .l-section {
-  @include verticalMargin();
-  @include horizontalPadding();
+  margin-bottom: 8em;
 }
 .l-wrapper {
   margin: 0 auto;
   max-width: 960px;
-  @include verticalMargin(wrapper);
-  @include horizontalPadding(wrapper);
+  padding-right: 1em;
+  padding-left: 1em;
 }
 .l-side {
-  @include verticalMargin(side);
-  @include horizontalPadding(side);
+  padding-right:1em;
+  padding-left: 1em;
 }
 .l-header {
-  @include verticalMargin(header);
-  @include horizontalPadding(header);
+  
 }
 .l-footer {
-  @include verticalMargin(footer);
-  @include horizontalPadding(footer);
+  
 }
 /*==========================
 Component
@@ -214,9 +211,10 @@ Modules
   padding-top: .5em;
   padding-bottom: .5em;
   font-size: 1.2rem;
+  margin-bottom: 3em;
   @include mq() {
     flex-wrap: nowrap;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: bold;
   }
   &__item {

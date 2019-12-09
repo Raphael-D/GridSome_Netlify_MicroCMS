@@ -80,32 +80,6 @@ $Colors: (
 @function getColor($value: base) {
   @return #{map-get($Colors, $value)};
 }
-// Vertical space values
-$verticalSpace: (
-	'section': 3em,
-	'wrapper': 0,
-	'side': 0,
-	'header': 0,
-	'footer': 0
-);
-// Set vertical margins
-@mixin verticalMargin($value: section) {
-	margin-top: #{map-get($verticalSpace, $value)};
-	margin-bottom: #{map-get($verticalSpace, $value)};
-}
-// Horizontal space values
-$horizontalSpace: (
-	'section': 0,
-	'wrapper': 1em,
-	'side': 1em,
-	'header': 0em,
-	'footer': 0em
-);
-// Set horizontal padding
-@mixin horizontalPadding($value: section) {
-	padding-right: #{map-get($horizontalSpace, $value)};
-	padding-left: #{map-get($horizontalSpace, $value)};
-}
 
 // Set Border Assy
 @mixin setBorder($weight: 1px, $style: solid, $color: base, $direction: null) {

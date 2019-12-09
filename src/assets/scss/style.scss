@@ -11,7 +11,7 @@
     border-collapse: collapse;
     font-size: 1.2rem;
     & td, & th {
-        border: 1px solid #000;
+        border: 1px solid #bbb;
         padding: .2em;
         @include mq() {
             padding: .5em;
@@ -26,7 +26,7 @@
     }
     &__cell--icon {
         text-align: center;
-        max-width: 3em;
+        // max-width: 3em;
         & svg {
             margin: 0;
         }
@@ -38,9 +38,13 @@
         white-space: nowrap;
         max-width: 10em;
         overflow-x: auto;
-        box-shadow: 2px 2px 1px #ccc inset;
         @include mq() {
             max-width: 20em;
+        }
+        & code {
+            border: 1px solid #ddd;
+            background-color: #eee;
+            color: #c00;
         }
     }
 }

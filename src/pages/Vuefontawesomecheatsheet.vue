@@ -2,7 +2,7 @@
     <!-- <Layout> -->
         <div>
             <div class="hero">
-                <h1 class="hero__heading">Vue font Awesome cheat sheet<br />INDEX</h1>
+                <h1 class="hero__heading">Vue font Awesome cheat sheet INDEX</h1>
             </div>
             <nav class="l-wrapper info-links">
                 <button class="info-links__item" @click='selectFa("fas")'>Solid</button>
@@ -13,7 +13,7 @@
             <!-- Font Awesome Solid -->
             <section v-if="conditions.fas" id="fas" class="l-section">
                 <div class="l-wrapper">
-                    <h2>Type of Solid</h2>
+                    <h2 class="section-title">Type of Solid</h2>
                     <table class="fa-table">
                         <tr class="fa-table__row fa-table__row--heading">
                             <th>Icon</th>
@@ -27,14 +27,14 @@
                             <td class="fa-table__cell fa-table__cell--name">{{ item.name }}</td>
                             <td class="fa-table__cell fa-table__cell--prefix">{{ item.prefix }}</td>
                             <td class="fa-table__cell fa-table__cell--iconName">{{ item.iconName }}</td>
-                            <td class="fa-table__cell fa-table__cell--code">&lt;font-awesome-icon :icon=&quot;['{{ item.prefix }}', '{{ item.iconName}}']&quot; /&gt;</td>
+                            <td class="fa-table__cell fa-table__cell--code"><code>&lt;font-awesome-icon :icon=&quot;['{{ item.prefix }}', '{{ item.iconName}}']&quot; /&gt;</code></td>
                         </tr>
                     </table>
                 </div>
             </section>
             <section v-if="conditions.fab" id="fab" class="l-section">
                 <div class="l-wrapper">
-                    <h2>Type of Brand</h2>
+                    <h2 class="section-title">Type of Brand</h2>
                     <table class="fa-table">
                         <tr class="fa-table__row fa-table__row--heading">
                             <th>Icon</th>
@@ -55,7 +55,7 @@
             </section>
             <section v-if="conditions.far" id="far" class="l-section">
                 <div class="l-wrapper">
-                    <h2>Type of Regular</h2>
+                    <h2 class="section-title">Type of Regular</h2>
                     <table class="fa-table">
                         <tr class="fa-table__row fa-table__row--heading">
                             <th>Icon</th>
