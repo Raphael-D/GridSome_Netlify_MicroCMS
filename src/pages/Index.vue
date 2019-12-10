@@ -124,15 +124,15 @@ export default {
     title: 'microCMSをGridSomeで構築してNetlifyで公開するための検証サイト'
   },
   methods: {
-    convertDate(value) {
-      let date = value.split('-'),
-        getYear = date[0].toString(),
-        getMonth = date[1].toString(),
-        getDay = date[2].toString(),
-        convertDay = getDay.substring(0, getDay.indexOf("T")),
-        stringDate = getYear + '/' + getMonth + '/' + convertDay;
-      return stringDate
-    },
+    // convertDate(value) {
+    //   let date = value.split('-'),
+    //     getYear = date[0].toString(),
+    //     getMonth = date[1].toString(),
+    //     getDay = date[2].toString(),
+    //     convertDay = getDay.substring(0, getDay.indexOf("T")),
+    //     stringDate = getYear + '/' + getMonth + '/' + convertDay;
+    //   return stringDate
+    // },
     putData() {
       this.title = this.$page.allHome.edges[0].node.title;
       this.date = this.$page.allHome.edges[0].node.date

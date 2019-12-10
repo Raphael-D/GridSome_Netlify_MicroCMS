@@ -72,6 +72,23 @@
         padding-left: 1em;
         margin-top: 0;
     }
+    & h3 {
+        border-bottom: 2px solid getColor(accent2);
+        padding-bottom: .2em;
+        margin-bottom: .5em;
+    }
+    & pre {
+        background-color: #000;
+        color: #26ff00;
+        padding: 1em;
+        overflow-x: auto;
+        border-radius: 1em;
+    }
+    & a {
+        color: getColor(accent2);
+        text-decoration: underline;
+        
+    }
 }
 .single-post-nav {
     margin-bottom: 3em;

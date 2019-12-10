@@ -63,6 +63,19 @@
   .single-post__content ul {
     padding-left: 1em;
     margin-top: 0; }
+  .single-post__content h3 {
+    border-bottom: 2px solid #008350;
+    padding-bottom: .2em;
+    margin-bottom: .5em; }
+  .single-post__content pre {
+    background-color: #000;
+    color: #26ff00;
+    padding: 1em;
+    overflow-x: auto;
+    border-radius: 1em; }
+  .single-post__content a {
+    color: #008350;
+    text-decoration: underline; }
 
 .single-post-nav {
   margin-bottom: 3em; }
