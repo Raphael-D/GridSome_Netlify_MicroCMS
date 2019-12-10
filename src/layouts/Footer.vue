@@ -10,6 +10,9 @@
                     <g-link class="footer__nav-link" to="/">Home</g-link>
                     <g-link class="footer__nav-link" to="/about/">About</g-link>
                     <g-link class="footer__nav-link" to="/works/">Works</g-link>
+                    <g-link class="footer__nav-link" to="/Vuefontawesomecheatsheet/"><font-awesome-icon :icon="['fab', 'font-awesome-flag']" />Font icons</g-link>
+                    <a class="footer__nav-link" target="_blank" href="https://github.com/Raphael-D/GridSome_Netlify_MicroCMS"><font-awesome-icon :icon="['fab', 'github']" />Github</a>
+                    <a class="footer__nav-link" href="mailto:support@codehack.dev"><font-awesome-icon :icon="['fas', 'envelope']" />contact</a>
                 </nav>
             </div>
             <div class="footer__contact">
