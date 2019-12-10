@@ -44,6 +44,7 @@ import VuePageTransition from 'vue-page-transition';
 
 
 
+
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   // head.link.push({
