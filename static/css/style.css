@@ -2,6 +2,95 @@
 *
 ===================*/
 /*===================
+* Post style (Common)
+===================*/
+.post-list {
+  border-bottom: 1px solid #ccc;
+  padding: 2em 0; }
+  .post-list:first-of-type {
+    border-top: 1px solid #ccc; }
+
+.post-list__title {
+  border-left: 0.3em solid #0d2538;
+  padding-left: .2em;
+  line-height: 1.5;
+  margin-bottom: 1em; }
+
+.post-list__date {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: .5em; }
+
+.post-list__content {
+  margin-bottom: 2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%; }
+
+.post-list__link {
+  text-align: right; }
+  .post-list__link a {
+    background-color: #00a672;
+    color: #fff;
+    font-weight: bold;
+    padding: .5em 1em; }
+
+.post-list__icon {
+  margin-left: 1em;
+  margin-right: 0; }
+
+/*===================
+* Single post style (Common)
+===================*/
+.single-post__title {
+  border-left: #00a672 0.2em solid;
+  padding-left: .5em;
+  font-size: 2.4rem;
+  background-color: #eee;
+  margin-bottom: 1em;
+  line-height: 2; }
+
+.single-post__date {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: .5em; }
+
+.single-post__content {
+  padding-top: 1em; }
+  .single-post__content p {
+    margin-bottom: 1em; }
+  .single-post__content ul {
+    padding-left: 1em;
+    margin-top: 0; }
+
+.single-post-nav {
+  margin-bottom: 3em; }
+
+.single-post-pager {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  border: #00a672 2px solid;
+  color: #00a672;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5em 1em; }
+  .single-post-pager__link {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center; }
+  .single-post-pager__icon {
+    display: flex;
+    flex-wrap: nowrap; }
+    .single-post-pager__icon .link-icon {
+      margin-left: .5em;
+      margin-right: .5em; }
+
+/*===================
+* Works.vue
+===================*/
+/*===================
 * Fontawesomecheetsheet.vue
 ===================*/
 .fa-table {

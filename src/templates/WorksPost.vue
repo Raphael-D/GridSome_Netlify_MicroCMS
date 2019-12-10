@@ -1,52 +1,35 @@
 <template>
     <Layout>
-        <div class="l-wrapper">
-            <p>single post page</p>
-            <h1>{{ $page.works.title }}</h1>
-            <dl>
-                <time>
-                    {{ $page.works.date }}
-                </time>
-            </dl>
-            <div v-html="$page.works.content"></div>
-            <p>現在のページURL：{{ $page.works.path }}</p>
-            <p>現在のページタイトル：{{ $page.works.title }}</p>
-            <hr />
-
-            <!-- Pager -->
-            <ul class="single-post-pager">
-                <li class="single-post-pager__lists" v-for="(item, i) in allPagelinks" :key="i">
-                  
+        <div class="hero">
+          <h2 class="hero__heading">
+            投稿個別ページ
+          </h2>
+        </div>
+        <article class="l-article">
+        <div class="l-wrapper single-post">
+            <h1 class="single-post__title">{{ $page.works.title }}</h1>
+            <time class="single-post__date"><font-awesome-icon :icon="['fas', 'clock']" />{{ $page.works.date }}</time>
+            <div class="single-post__content" v-html="$page.works.content"></div>
+        </div>
+        </article>
+        <nav class="single-post-nav">
+          <div class="l-wrapper">
+              <!-- Pager -->
+              <ul class="single-post-pager">
+                  <li class="single-post-pager__lists" v-for="(item, i) in allPagelinks" :key="i">
                     <g-link :to="item.path" class="single-post-pager__link">
                       <span class="single-post-pager__icon single-post-pager__icon--prev" v-if="pagercondition.prev & i == 0 | !pagercondition.next & i == 0">
-                        <font-awesome-icon :icon="['fas', 'chevron-left']" />
+                        <font-awesome-icon class="link-icon" :icon="['fas', 'chevron-left']" />
                       </span>
                       {{item.title}}
                       <span class="single-post-pager__icon single-post-pager__icon--next" v-if="pagercondition.next & i == 1 | !pagercondition.prev & i == 0">
-                        <font-awesome-icon :icon="['fas' ,'chevron-right']" />
+                        <font-awesome-icon class="link-icon" :icon="['fas' ,'chevron-right']" />
                       </span>
                     </g-link>
-                  
-                </li>
-            </ul>
-            <hr />
-            
-            <hr />
-            
-
-
-
-            <!-- <table v-pre>
-                <tr v-for="item in $page.allWorks.edges" :key="item.node.permalink" class="works-post__list">
-                    <td>{{ item.node.id }}</td>
-                    <td>{{ item.node.title }}</td>
-                    <td>{{ item.node.slug }}</td>
-                    <td>{{ item.node.date }}</td>
-                    <td v-html="item.node.content"></td>
-                    <td><g-link :to="item.node.path">{{ item.node.path }}</g-link></td>
-                </tr>
-            </table> -->
-        </div>
+                  </li>
+              </ul>
+          </div>
+        </nav>
     </Layout>
 </template>
 
@@ -80,19 +63,29 @@ export default {
       currentpage: null, 
       allpages: null,
       otherpagelink: [],
-      debug: 'No data',
       pagercondition: {
         prev: false,
         next: false
-      }
+      },
+      rawcontent: null
     }
   },
   metaInfo() {
     return {
-      title: this.$page.works.title
+      title: this.$page.works.title,
+      meta: [
+        { name: 'keywords', content: 'JAMStack, SSR, MicroCMS, GridSome, Netlify, Github, Vue, Static Site Generator, JAPAN'},
+        { name: 'description', content: this.content}
+      ],
+      link: [
+        { rel: 'stylesheet', href: '/css/style.css' }
+      ]
     }
   },
   methods: {
+    putData() {
+      this.rawcontent = this.$page.works.content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'');
+    }
   },
   computed: {
     getNowPage() {
@@ -140,25 +133,21 @@ export default {
             // console.log("Middle link condition : ",this.otherpagelink)
             return this.otherpagelink;
         }
-        
-        
       }
-      // // return this.otherpagelink;
-      // if(indexNum.length !== 0) {
-      //     console.log("allLinkArrays",indexNum);
-      //     console.log("this.otherpagelink", this.otherpagelink)
-      //     // console.log(indexNum.length -1, 'indexNum.length')
-      //     // counts = 1;
-      // }
-      // // return this.otherpagelink;
-      
     }
   },
   mounted() {
     this.currentpage = '/works/' + this.$route.params.path + '/';
     this.allpages = this.$page.allWorks.edges;
+    this.putData();
     // this.allPagelinks();
   }
 
 }
 </script>
+<style lang="scss" scoped>
+p {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+</style>
