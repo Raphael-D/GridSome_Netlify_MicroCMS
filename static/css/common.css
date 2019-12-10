@@ -42,6 +42,10 @@ Layout
   padding-right: 1em;
   padding-left: 1em; }
 
+.l-article {
+  padding-top: 3em;
+  padding-bottom: 3em; }
+
 /*==========================
 Component
 ==========================*/
@@ -61,10 +65,6 @@ Component
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap; }
-  @media screen and (min-width: 768px) {
-    .header__wrapper,
-    .footer__wrapper {
-      flex-wrap: nowrap; } }
 
 .header__home-link,
 .footer__home-link {
@@ -72,13 +72,20 @@ Component
   flex-wrap: nowrap;
   align-items: center;
   width: calc(100% - 3em); }
+  @media screen and (min-width: 768px) {
+    .header__home-link,
+    .footer__home-link {
+      max-width: 400px;
+      width: 100%; } }
 
 .header__site-title,
 .footer__site-title {
   width: 12em;
   font-size: 1rem;
   font-weight: bold;
-  padding: 0 1em; }
+  padding: 0 1em;
+  display: block;
+  white-space: nowrap; }
 
 .header__logo,
 .footer__logo {
@@ -139,19 +146,23 @@ Component
       flex-wrap: nowrap;
       text-align: right;
       border-top-width: 0;
-      justify-content: flex-end;
       margin-top: 0;
-      padding-top: 0; } }
+      padding-top: 0;
+      width: 600px; } }
   .header__nav-link,
   .footer__nav-link {
     display: block;
     margin-bottom: 1em;
-    padding-top: 1em; }
+    padding-top: 1em;
+    white-space: nowrap; }
     @media screen and (min-width: 768px) {
       .header__nav-link,
       .footer__nav-link {
         margin-right: 1em;
         margin-left: 1em; }
+        .header__nav-link:first-of-type,
+        .footer__nav-link:first-of-type {
+          margin-left: 0; }
         .header__nav-link:last-of-type,
         .footer__nav-link:last-of-type {
           margin-right: 0; } }
@@ -258,22 +269,4 @@ Modules
   .feature__list:nth-of-type(2n) .feature__content {
     padding-left: 0;
     padding-right: 3em; } }
-
-.single-post-pager {
-  list-style: none;
-  display: flex;
-  flex-wrap: nowrap;
-  border: 1px solid #f0f;
-  justify-content: space-between; }
-  .single-post-pager__list {
-    display: flex;
-    flex-wrap: nowrap; }
-  .single-post-pager__icon {
-    display: block; }
-    .single-post-pager__icon--prev {
-      float: left; }
-    .single-post-pager__icon--next {
-      float: right; }
-    .single-post-pager__icon svg {
-      color: red; }
 

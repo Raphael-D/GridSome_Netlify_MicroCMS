@@ -29,11 +29,6 @@ html {
   /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
   vertical-align: inherit; }
 
-* {
-  padding: 0;
-  /* Reset `padding` and `margin` of all elements */
-  margin: 0; }
-
 /* # =================================================================
    # General elements
    # ================================================================= */
@@ -272,6 +267,21 @@ svg:not([fill]) {
 /*****************************************
 * Added to my styles
 ******************************************/
+body,
+section,
+div,
+article,
+main,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0; }
+
 html {
   font-size: 62.5%; }
 
@@ -295,4 +305,8 @@ a {
 
 button:focus {
   outline: 0; }
+
+br {
+  padding: initial;
+  margin: initial; }
 
