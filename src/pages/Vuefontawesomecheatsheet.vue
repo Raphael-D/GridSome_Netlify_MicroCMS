@@ -10,6 +10,11 @@
                 <button class="info-links__item" @click='selectFa("far")'>Regular</button>
                 <button class="info-links__item" @click='selectFa("reset")'>Reset</button>
             </nav>
+            <section class="l-section">
+                <div class="l-wrapper">
+                    <p>※ご使用の前に、vue-fontawesomeのインストール、Vueライブラリ、Vueコンポーネントへ追加する必要があります。</p>
+                </div>
+            </section>
             <!-- Font Awesome Solid -->
             <section v-if="conditions.fas" id="fas" class="l-section">
                 <div class="l-wrapper">
@@ -48,7 +53,7 @@
                             <td class="fa-table__cell fa-table__cell--name">{{ item.name }}</td>
                             <td class="fa-table__cell fa-table__cell--prefix">{{ item.prefix }}</td>
                             <td class="fa-table__cell fa-table__cell--iconName">{{ item.iconName }}</td>
-                            <td class="fa-table__cell fa-table__cell--code">&lt;font-awesome-icon :icon=&quot;['{{ item.prefix }}', '{{ item.iconName}}']&quot; /&gt;</td>
+                            <td class="fa-table__cell fa-table__cell--code"><code>&lt;font-awesome-icon :icon=&quot;['{{ item.prefix }}', '{{ item.iconName}}']&quot; /&gt;</code></td>
                         </tr>
                     </table>
                 </div>
@@ -69,7 +74,7 @@
                             <td class="fa-table__cell fa-table__cell--name">{{ item.name }}</td>
                             <td class="fa-table__cell fa-table__cell--prefix">{{ item.prefix }}</td>
                             <td class="fa-table__cell fa-table__cell--iconName">{{ item.iconName }}</td>
-                            <td class="fa-table__cell fa-table__cell--code">&lt;font-awesome-icon :icon=&quot;['{{ item.prefix }}', '{{ item.iconName}}']&quot; /&gt;</td>
+                            <td class="fa-table__cell fa-table__cell--code"><code>&lt;font-awesome-icon :icon=&quot;['{{ item.prefix }}', '{{ item.iconName}}']&quot; /&gt;</code></td>
                         </tr>
                     </table>
                 </div>
