@@ -14,7 +14,7 @@
           <g-link class="header__nav-link" to="/works/">Works</g-link>
           <g-link class="header__nav-link" to="/Vuefontawesomecheatsheet/"><font-awesome-icon :icon="['fab', 'font-awesome-flag']" />Font icons</g-link>
           <a class="header__nav-link" target="_blank" href="https://github.com/Raphael-D/GridSome_Netlify_MicroCMS"><font-awesome-icon :icon="['fab', 'github']" />Github</a>
-          <a class="header__nav-link" href="mailto:support@codehack.dev"><font-awesome-icon :icon="['fas', 'envelope']" />contact</a>
+          <g-link class="header__nav-link" to="/Contact/"><font-awesome-icon :icon="['fas', 'envelope']" />Contact</g-link>
         </nav>
         </transition>
     </div>
