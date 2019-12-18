@@ -142,3 +142,24 @@
 .fa-table__cell--name {
   display: none; }
 
+/*===================
+* Contact.vue
+===================*/
+.contact-form__row {
+  padding-bottom: 1em; }
+
+.contact-form__row label {
+  display: flex;
+  flex-wrap: wrap; }
+
+.contact-form input, .contact-form select, .contact-form option, .contact-form textarea, .contact-form button {
+  border: 1px solid #aaa;
+  width: 100%;
+  border-radius: 0;
+  display: block;
+  height: 2em;
+  margin-top: .2em; }
+
+.contact-form textarea {
+  height: 5em; }
+
