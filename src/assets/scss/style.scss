@@ -14,10 +14,13 @@
 }
 .post-list__title {
     border-left: .3em solid getColor(base);
-    padding-left: .2em;
+    padding-left: .4em;
     line-height: 1.5;
     margin-bottom: 1em;
-
+    font-size: 1.8rem;
+    @include mq() {
+        font-size: 2.4rem;
+    }
 }
 .post-list__date {
     color: #666;
@@ -31,6 +34,9 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
+    @include mq() {
+        margin-bottom: 4em;
+    }
 }
 .post-list__link {
     text-align: right;

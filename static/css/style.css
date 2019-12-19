@@ -12,9 +12,13 @@
 
 .post-list__title {
   border-left: 0.3em solid #0d2538;
-  padding-left: .2em;
+  padding-left: .4em;
   line-height: 1.5;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  font-size: 1.8rem; }
+  @media screen and (min-width: 768px) {
+    .post-list__title {
+      font-size: 2.4rem; } }
 
 .post-list__date {
   color: #666;
@@ -27,6 +31,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%; }
+  @media screen and (min-width: 768px) {
+    .post-list__content {
+      margin-bottom: 4em; } }
 
 .post-list__link {
   text-align: right; }
