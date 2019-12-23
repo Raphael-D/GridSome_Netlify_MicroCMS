@@ -135,7 +135,7 @@ Note that if the input field created on the MicroCMS side is a multiple content 
 > Refblog: <a target="_blank" href="https://codehack.dev/works/how-to-import-graphql-from-microcms-in-post/">Import and display the post acquired by MicroCMS into GraphQL of GridSome</a>
 
 ### How to use GraphQL?
-> Here: "/src/templates/WorksPost.vue" : "<page-query> ~ </page-query>"
+> Here: "/src/templates/WorksPost.vue" : "&lt;page-query&gt; ~ &lt;/page-query&gt;"
 
 ### Other question or IMO?
 > Here: <a href="mailto:support@codehack.dev">support@codehack.dev</a>
