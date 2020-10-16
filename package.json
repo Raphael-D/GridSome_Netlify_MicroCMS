@@ -11,6 +11,7 @@
     "build": "run-s build:sass build:gridsome"
   },
   "dependencies": {
+    "@gridsome/plugin-google-analytics": "^0.1.2",
     "gridsome": "^0.7.0"
   },
   "devDependencies": {
